@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+h1 {
+	color: red;
+	font-weight: bold;
+	font-family: "Comic Sans MS";
+	border-bottom: 1px solid red;
+	/*
+	font-family:"궁서체";
+	font-family:"바탕체";
+	font-family:"돋움체";
+	*/
+}
+
+p {
+	font-style: italic;
+	font-weight: bold;
+}
+
+span {
+	color: orange;
+}
+
+body{
+	background: darkolivegreen;
+}
+
+.first{
+	color: red;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>CSS 적용 문서</title>
+		<!-- 1번쨰 방법 (내부 파일로 작성) -->
+		<style type="text/css">
+			h1{
+				color: red;
+				font-weight:bold;
+				font-family:"Comic Sans MS";
+				/*
+				font-family:"궁서체";
+				font-family:"바탕체";
+				font-family:"돋움체";
+				*/				
+			}
+			p{
+				font-style:italic;
+				font-weight:bold;
+			}
+			span{
+				color:darkolivegreen;
+			}
+		</style>
+		
+		 <!-- 2번째 방법 (외부 파일로 작성)-->
+		 <link rel="stylesheet" type="text/css" href="style.css"/>
+	</head>
+	<body>
+		<h1>Test Style Sheet</h1>
+		<p>Basic Css Grammar</p>
+		<!-- 3번째 방법 (태그에 직접 작성) -->
+		<span style="font-size: 28px; ">Hey, Siri</span>
+	</body>
+</html>
