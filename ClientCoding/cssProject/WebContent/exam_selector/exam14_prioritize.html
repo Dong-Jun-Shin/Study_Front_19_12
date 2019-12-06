@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>선택자의 우선 순위</title>
+		<style type="text/css">
+			/* 태그 */
+			p{
+				font-size: 25px;
+				font-weight: bold;
+				color: #8041D9;
+			}
+			/* 클래스 */
+			.text{
+				font-size: 15px;
+				font-family: 휴먼옛체, 맑은고딕;
+				color: rgb(255,0,121);
+			}
+			/* 아이디 */
+			#font{
+				font-size: 35px;
+				font-family: "Times New Roman", "Comic Sans MS";
+				color: gray;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>[CSS를 이용한 폰트]</h1>
+		<!-- (클래스  < 아이디) -->
+		<p class="text" id="font">Good Morning</p>
+		<!-- (클래스) -->
+		<p class="text">안녕하세요</p>
+		<!-- (클래스 < 아이디  < 인라인) -->
+		<p class="text" id="font" style="color:yellow; font-size:50px;">Good Morning</p>
+		<p>안녕하세요</p>
+		<!-- (클래스 < 아이디) -->
+		<strong class="text" id="font">안녕하세요</strong>
+	</body>
+</html>

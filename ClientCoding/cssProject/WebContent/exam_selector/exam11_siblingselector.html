@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>형제 선택자와 인접 형제 선택자</title>
+		<style type="text/css">
+			/* 결과 범위 : 1개(h1 이후 h2)*/
+			h1+h2{
+				color: red;
+			}
+			/* 결과 범위 : 다수(h1 이후 모든 h2) */
+			h1~h2{
+				background-color: yellow;
+			}
+			/* 결과 범위 : 다수(h1 이후 모든 h2) */
+			h1~h2:hover{
+				color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Have a shit</h1>
+		<h2>Have a shit</h2>
+		<h2>Have a shit</h2>
+		<h3>Have a shit</h3>
+		<h2>Have a shit</h2>
+		<h1>Have a shit</h1>
+	</body>
+</html>

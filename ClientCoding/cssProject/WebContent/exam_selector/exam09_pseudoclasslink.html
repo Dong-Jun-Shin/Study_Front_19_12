@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>링크 관련 가상 클래스 선택자 확인</title>
+      <style type="text/css">
+         a:link{
+         	color:blue;
+         }
+         a:visited{
+         	color:red;
+         }
+         a:hover{
+         	color:green; 
+         	font-size:20px;
+         }
+         a:active{
+         	color:yellow;
+         }
+         input[type="text"]:focus{
+         	background-color:skyblue;
+         }
+         
+         p:fist-letter{
+            font-size: 25px; background-color: gray;
+            color:white; font-weight:bold;
+         }
+         
+         P:nth-child(even){ /*even number: 짝수*/
+            color:pink;
+         }
+         
+         p:nth-child(odd){ /*odd number: 홀수*/
+            color:blue;
+         }
+         
+         
+      </style>
+   </head>
+   <body>
+      <a href="http://naver.com" target="_blank">네이버</a> 사이트로 이동하기
+      <form>
+         <input type="text" name="name" id="name">
+      </form>
+      
+      <p>아기 상어, 뚜루루  아기 상어, 뚜루루  </p>
+      <p>뚜루뚜루 뚜루루 아기 상어 </p>
+      <p>엄마 상어, 뚜루루 엄마 상어, 뚜루루</p>
+      <p>뚜루뚜루 뚜루루 엄마 상어 </p>
+      <p>아빠 상어, 뚜루루  아빠 상어, 뚜루루 </p>
+      <p>뚜루뚜루 뚜루루 아빠 상어 </p>
+      <p>할머니 상어, 뚜루루 할머니 상어, 뚜루루 </p>
+      <p>뚜루뚜루 뚜루루 할머니 상어 </p>
+      <p>할아버지 상어, 뚜루루 할아버지 상어, 뚜루루 </p>
+      <p>뚜루뚜루 뚜루루 할아버지 상어</p>
+      <p>상어 안녕, 뚜루루 뚜루뚜루 뚜루루 상어 안녕!</p>
+   </body>
+</html>
