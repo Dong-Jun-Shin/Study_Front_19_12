@@ -3,9 +3,24 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>table 태그 확인</title>
+		<style type="text/css">
+			table{
+				/*border-collapse: separate;*/
+				/*겹치는 테두리 합치기*/
+				border-collapse: collapse;
+				/*테두리 사이를 채워서 진하게 만듬*/
+				/*border-spacing: 0px;*/
+			}
+			table, tr, td, th{
+				border: 2px solid lime;
+			}
+			caption{
+				caption-side: bottom;
+			}
+		</style>
 	</head>
 	<body>
-		<table border="1">
+		<table>
 			<caption>주소록</caption>
 			<tr>
 				<th>이름</th>
@@ -24,7 +39,9 @@
 			</tr>
 		</table>
 
-		<table border="1">
+		<p/>
+
+		<table>
 			<caption>영화</caption>
 			<tr>
 				<th>영화제목</th>

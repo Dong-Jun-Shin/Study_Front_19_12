@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+.head {
+	color: green;
+	font-size: 25px;
+	font-family: "궁서";
+	font-weight: normal;
+}
+
+p{
+	font-family: "바탕";
+}
+
+strong {
+	color: orange;
+	font-size: 15px;
+	font-family: "돋움";
+	font-style: italic;
+}
+
+em#italic {
+	color: skyblue;
+	font-size: 15px;
+}
+
+ul.list li {
+	color: #FF0000;
+	font-size: 18px;
+	font-weight: bold;
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>문단 관련 스타일</title>
+		<style>
+			div{
+				height: 40px;
+				border: 1px dotted #d5d5d5;
+			}
+			div.text1{
+				/*각 단어의 첫글자를 대문자로*/
+				text-transform: capitalize;
+			}
+			div.text1-1{
+				/*전체 문자를 대문자로*/
+				text-transform: uppercase;
+			}
+			div.text2{
+				text-align: right;
+			}
+			div.text3{
+				/*underline: 밑줄, overline: 윗줄*/
+				text-decoration: underline overline;
+				text-decoration-color: red;
+				text-decoration-style: dotted;
+			}
+			div.text4{
+				/*들여쓰기*/
+				text-indent: 50px;
+			}
+			div.text5{
+				/*글자 간격*/
+				letter-spacing: 10px;
+			}
+			div.text6{
+				/*단어 사이 간격*/
+				word-spacing: 30px;
+			}
+			div.text7{
+				vertical-align: middle;
+			}
+			/*태그 태그 : 자식 포함 참조*/
+			div.text8 a{
+				text-decoration: none;
+			}
+			p.test{
+				width: 11em;
+				border: 1px solid #000000;
+				word-wrap: break-word;
+		</style>
+	</head>
+	<body>
+		<div class="text1">text-transform: capitalize</div>
+		<div class="text1-1">text-transform: uppercase</div>
+		<div class="text2">text-align: right</div>
+		<div class="text3">text-decoration color style</div>
+		<div class="text4">text-indent: 50px</div>
+		<div class="text5">letter-spacing: 10px;</div>
+		<div class="text6">word-spacing: 30px</div>
+		<div class="text7">vertical align middle</div>
+		<div><a href="http://www.naver.com">네이버</a>로 이동</div>
+		<div class="text8"><a href="http://www.naver.com">네이버</a>로 이동</div>	
+		
+		<!-- 
+			width로 너비 제한이 들어가면 너비를 넘어서는 경우, 띄어쓰기를 기준으로 줄바꿈이 이뤄진다.
+			긴 단어의 경우 word-wrap이 줄바꿈을 해준다.
+		 -->	
+		<p class="test">
+			aaaaaaaaaaaa aaaaaaaaaaaaaa aaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaa aaaaaaaaaaa aaaaaaaaaaaaa aaaaaaaaaaa
+		</p>
+		<p class="test">
+			aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+		</p>
+		
+	</body>
+</html>
