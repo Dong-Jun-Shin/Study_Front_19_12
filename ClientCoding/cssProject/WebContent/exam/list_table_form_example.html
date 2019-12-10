@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>목록 이메일</title>
+		<style type="text/css">
+			body{
+				background-color: #f8f8f8;
+				color: #666;
+			}
+			
+			h1{
+				color: gray;
+			}
+			
+			ul{
+				list-style-image: url("../image/icon-plus.png");
+			}
+			
+			fieldset {
+				padding-top: 10px; 
+				width: 310px;
+				border: 1px solid #d6d6d6;
+				background-color: #ffffff; 
+			}
+			
+			legend{
+				font-style: italic;
+			}
+			
+			td#lecture{
+				width: 300px;
+			}
+			
+			table#schedule{
+				border-collapse: collapse;
+				width: 800px;
+			}
+			
+			table#schedule th, table#schedule td{
+				border: 1px solid gray;
+				padding: 4px;
+			}
+			
+			table#schedule th{
+			 	background-color: #6699FF;
+			 	border-bottom: 3px solid #3366CC;
+			 	color: white;
+			 	text-shadow: 1px 1px 1px black;
+			}
+			
+			table#schedule tr:nth-child(odd){
+				background-color: skyblue;
+			}
+
+			table#schedule tr:nth-child(even){
+				background-color: lightblue;
+			}
+			
+			
+			table#register td{
+				width:150px;
+				line-height: 40px; 
+			}
+			
+			
+			input[type="text"], input[type="email"]{
+				width: 120px;
+			}
+			
+			input[type="text"]:focus, input[type="email"]:focus{
+				border: 2px solid darkblue;
+				background-color: #CCFFFF;
+			}
+			
+			input[type="submit"]{
+				margin-left: 280px;
+				background-color: #009966;
+				border: 1px solid #006633;
+				border-radius: 3px;
+				color: white;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<h1>시 워크샵(Poetry Workshops)</h1>
+		<p>1년 동안 다양한 시 워크샵과 심포지엄을 실시합니다.</p>
+		<p>다음과 같은 이벤트가 회원들에게 무료로 제공되오니 참고하며 주시기 바랍니다.</p>
+		<ul>
+			<li>A Poetic Perspective</li>
+			<li>Wait Whitman at War</li>
+			<li>Found Poems and Outsider Poetry</li>
+		</ul>
+		<table id="schedule">
+			<thead>
+				<tr>
+					<th></th>
+					<th>뉴욕</th>
+					<th>시카고</th>
+					<th>샌프란시스코</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td id="lecture"><strong>A Poetic Perspective</strong></td>
+					<td>2012년 2월 4일(토)<br />오전 11시 - 오후 2시</td>
+					<td>2012년 3월 3일(토)<br />오전 11시 - 오후 2시</td>
+					<td>2012년 3월 17일(토)<br />오전 11시 - 오후 2시</td>
+				</tr>
+				<tr>
+					<td id="lecture"><strong>Wait Whitman at War</strong></td>
+					<td>2012년 4월 7일(토)<br />오전 11시 - 오후 1시</td>
+					<td>2012년 5월 5일(토)<br />오전 11시 - 오후 1시</td>
+					<td>2012년 5월 19일(토)<br />오전 11시 - 오후 1시</td>
+				</tr>
+				<tr>
+					<td id="lecture"><strong>Found Poems and Outsider Poetry</strong></td>
+					<td>2012년 6월 9일(토)<br />오전 11시 - 오후 2시</td>
+					<td>2012년 7월 7일(토)<br />오전 11시 - 오후 2시</td>
+					<td>2012년 7월 21일(토)<br />오전 11시 - 오후 2시</td>
+				</tr>
+				<tr>
+					<td id="lecture"><strong>Natural Death: An Exploration</strong></td>
+					<td>2012년 8월 4일(토)<br />오전 11시 - 오후 4시</td>
+					<td>2012년 9월 8일(토)<br />오전 11시 - 오후 4시</td>
+					<td>2012년 9월 15일(토)<br />오전 11시 - 오후 4시</td>
+				</tr>
+			</tbody>
+		</table><br />
+		<form>
+			<fieldset>
+				<legend>관심 강좌 등록</legend>
+					<table id="register">
+						<tr>
+							<td><label for="inTxt">이름:</label></td>
+							<td><input id="inTxt" type="text" required="required"></td>
+						</tr>
+						<tr>
+							<td><label for="inMail">이메일:</label></td>
+							<td><input id="inMail" type="email" required="required"></td>
+						</tr>
+						<tr>
+							<td>가장 가까운 센터:</td>
+							<td>
+								<select size="1">
+									<option>뉴욕</option>
+									<option>시카고</option>
+									<option>샌프란시스코</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<label>회원이십니까?</label>
+								<label><input type="radio" name="check">예</label>
+								<label><input type="radio" name="check">아니요</label>
+							</td>					
+						</tr>
+					</table>
+			</fieldset>
+			<p><input type="submit" value="등록"></p>
+		</form> 
+	</body>
+</html>
