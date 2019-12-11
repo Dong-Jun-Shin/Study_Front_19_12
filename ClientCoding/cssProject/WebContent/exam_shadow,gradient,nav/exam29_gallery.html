@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>gallery</title>
+		<style type="text/css">
+			div.polaroid{
+				display: inline-block;
+				margin-right: 15px;
+				box-shadow: 0px 0px 5px rgba(0,0,0, 0.2);
+			}
+			
+			div.container{
+				text-align: center;
+				height: 100%;
+				padding: 5px 5px;
+				background-color: white;
+			}
+			
+			img{
+				width: 300px;
+				height: 200px;
+			}
+			
+			img:hover {
+				opacity: 0.5;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="polaroid">
+			<!-- target="_blank" 새 창에서 띄우기 -->
+			<a target="_blank" href="../image/01.jpg">
+				<img src="../image/01.jpg" alt="evening glow">
+			</a>
+			<div class="container"><p>Evening Glow</p></div>
+		</div>
+		
+		<div class="polaroid">
+			<a target="_blank" href="../image/02.jpg">
+				<img src="../image/02.jpg" alt="lake side">
+			</a>
+			<div class="container"><p>Lake Side</p></div>
+		</div>
+		
+		<div class="polaroid">
+			<a target="_blank" href="../image/03.jpg">
+				<img src="../image/03.jpg" alt="southern sea">
+			</a>
+			<div class="container"><p>Southern Sea</p></div>
+		</div>
+		
+		<div class="polaroid">
+			<a target="_blank" href="../image/04.jpg">
+				<img src="../image/04.jpg" alt="coast road">
+			</a>
+			<div class="container"><p>Coast Road</p></div>
+		</div>
+	</body>
+</html>
