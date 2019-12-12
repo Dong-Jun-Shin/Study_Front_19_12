@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>images</title>
+		<style type="text/css">
+			body{
+				color: #665544;
+				background-color: #d4d0c6;
+				background-image: url("../image/backdrop.gif");
+			}
+			
+			div#body{
+				width: 720px;
+				margin: 0px auto;
+			}
+
+			div.header{
+				width: 100%;
+				margin: 40px 0px 20px 0px;
+				text-align: center;
+			}
+			
+			div.content{
+				width: 200px; height: 198px;
+				float: left;
+				margin: 10px;
+			}
+			
+			img{
+				width: 456px;
+				height: 122px;
+			}
+
+			figure{
+				display: block;
+				width: 202px;
+				height: 170px;
+				margin: 0px;
+				padding: 9px;
+				background-color: #e7e3d8;
+				text-align: left;
+			}
+			
+			figure img{
+				width: 200px; 
+				height: 150px;
+				border: 1px solid #d6d6d6;
+			}
+			
+			figcaption{
+				background: url("../image/icon.png") left center no-repeat;
+				padding-left: 18px;
+			}
+
+			figcaption span{
+				font-family: Geogia, Times, san-serif;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="body">
+			<div class="header">
+				<img src="../image/title.gif" alt="Galerie Botanique">
+				<p>개최된 컬렉션에 선택된 고풍스러운 식물 이미지는 다음과 같다.</p>
+			</div>
+			<div class="content">
+				<figure>
+					<img class="flower" src="../image/print-01.jpg" alt="Helianthus">
+					<figcaption>
+						해바라기<span>(Helianthus)</span>
+					</figcaption>
+				</figure>
+			</div>
+			<div class="content">
+				<figure>
+					<img class="flower" src="../image/print-02.jpg" alt="Passiflora">
+					<figcaption>
+						시계꽃<span>(Passiflora)</span>
+					</figcaption>
+				</figure>
+			</div>
+			<div class="content">
+				<figure>
+					<img class="flower" src="../image/print-03.jpg" alt="Nyctocalos">
+					<figcaption>
+						닉토칼로스<span>(Nyctocalos)</span>
+					</figcaption>
+				</figure>
+			</div>
+			<div class="content">
+				<figure>
+					<img class="flower" src="../image/print-04.jpg" alt="Polianthes">
+					<figcaption>
+						폴리안테스<span>(Polianthes)</span>
+					</figcaption>
+				</figure>
+			</div>
+			<div class="content">
+				<figure>
+					<img class="flower" src="../image/print-05.jpg" alt="Ficus">
+					<figcaption>
+						무화과나무<span>(Ficus)</span>
+					</figcaption>
+				</figure>
+			</div>
+			<div class="content">
+				<figure>
+					<img class="flower" src="../image/print-06.jpg" alt="Dendrobium">
+					<figcaption>
+						덴드로비움<span>(Dendrobium)</span>
+					</figcaption>
+				</figure>
+			</div>
+		</div>
+	</body>
+</html>
+			
+			
+<!-- 
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>images</title>
+		<style type="text/css">
+			body{
+				color: #665544;
+				background-color: #d4d0c6;
+				background-image: url("../image/backdrop.gif");
+			}
+			
+			div#body{
+				width: 720px;
+				margin-top: 30px;
+				margin-left: auto;
+				margin-right: auto;
+				text-align: center;
+			}
+
+			figure{
+				display: inline-block;
+				width: 220px;
+				height: 180px;
+				margin: 10px 5px;
+				padding-top: 10px;
+				background-color: #e7e3d8;
+			}
+
+			span{
+				font-family: Geogia, Times, san-serif;
+			}
+			
+			img.flower{
+				
+				border: 1px solid #d6d6d6;
+			}
+			
+			figure figcaption{
+				text-align: left;
+				padding-left: 10px;
+			} 
+		</style>
+	</head>
+	<body>
+		<div id="body">
+			<img src="../image/title.gif" alt="Galerie Botanique">
+			<p>개최된 컬렉션에 선택된 고풍스러운 식물 이미지는 다음과 같다.</p>
+			<figure>
+				<img class="flower" src="../image/print-01.jpg" alt="Helianthus">
+				<figcaption>
+					<img src="../image/icon.png"> 해바라기<span>(Helianthus)</span>
+				</figcaption>
+			</figure>
+			<figure>
+				<img class="flower" src="../image/print-02.jpg" alt="Passiflora">
+				<figcaption>
+					<img src="../image/icon.png"> 시계꽃<span>(Passiflora)</span>
+				</figcaption>
+			</figure>
+			
+			<figure>
+				<img class="flower" src="../image/print-03.jpg" alt="Nyctocalos">
+				<figcaption>
+					<img src="../image/icon.png"> 닉토칼로스<span>(Nyctocalos)</span>
+				</figcaption>
+			</figure>
+			<figure>
+				<img class="flower" src="../image/print-04.jpg" alt="Polianthes">
+				<figcaption>
+					<img src="../image/icon.png"> 폴리안테스<span>(Polianthes)</span>
+				</figcaption>
+			</figure>
+			<figure>
+				<img class="flower" src="../image/print-05.jpg" alt="Ficus">
+				<figcaption>
+					<img src="../image/icon.png"> 무화과나무<span>(Ficus)</span>
+				</figcaption>
+			</figure>
+			<figure>
+				<img class="flower" src="../image/print-06.jpg" alt="Dendrobium">
+				<figcaption>
+					<img src="../image/icon.png"> 덴드로비움<span>(Dendrobium)</span>
+				</figcaption>
+			</figure>
+		</div>
+	</body>
+</html>
+ -->

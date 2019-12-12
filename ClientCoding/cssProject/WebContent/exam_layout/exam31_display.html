@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>블록과 인라인</title>
+		<style type="text/css">
+			span{
+				width: 100px;
+				height: 100px;
+				/* 
+				메모리에서 영영, 값 모두 사라진다. 나중에 이벤트를 통해 다시 적재
+				display: none;
+				display: inline;
+				display: block;
+				display: inline-block;
+				*/
+			}
+			
+			#html{
+				background-color:#FFE400;
+			}
+			
+			#css{
+				background-color:#B5B2FF;
+				/* 메모리에 영역, 값이 남아있다. */
+				visibility: hidden;
+			}
+			
+			#js{
+				background-color:#D9418C;
+			}
+		</style>
+	</head>
+	<body>
+		웹 표준은 <span id="html">HTML</span>구조, 
+		<span id="css">CSS</span>디자인, 
+		<span id="js">JavaScript</span>동작이 있습니다. 
+		
+	</body>
+</html>
