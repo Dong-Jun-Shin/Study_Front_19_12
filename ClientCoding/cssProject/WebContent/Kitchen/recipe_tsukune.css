@@ -1,0 +1,111 @@
+@charset "UTF-8";
+header, section, footer, aside, nav, article, figure, figcaption{
+		display:block;
+}
+body {
+		color:#666666;
+		background:#f9f8f6 url("../image/dark-wood.jpg") center;
+		font-family:Georgia, Times, serif;
+		line-height:1.4em;
+		margin:0px;
+}
+.wrapper {
+		width:940px;
+		margin:20px auto;
+		border:2px solid #000000;
+		background-color:#ffffff;
+}
+header {
+		height:160px;
+		background-image:url("../image/header.jpg");
+}
+h1 {
+		visibility:hidden;
+		width:940px;
+		height:130px;
+		margin:0px;
+}
+nav, footer{
+		clear:both;
+		color:#ffffff;
+		background-color:#aeaca8;
+		height:30px;
+}
+nav ul {
+		margin:0px;
+		padding:5px 0px 5px 30px;
+}
+nav li{
+		display:inline;
+		margin-right:40px;		
+}
+nav li a {
+		color:#ffffff;
+}
+nav li a:hover, nav li a.current{
+		color:#000000;
+}
+section.courses{
+		float:left;
+		width:659px;
+		border-right:1px solid #eeeeee;
+}
+/* 홈 컨텐츠 영역에 대한 css */
+article.more-articles {
+		display:inline; float:left; width:290px;
+		padding:5px; margin:10x;
+		border-top:1px solid #ffffff;
+}
+
+.more-articles img {
+		width: 290px; height:190px;
+		border:1px solid #eeeeee;
+}
+.more-articles p {
+		border-bottom:1px solid #807c72;
+		padding:5px 0px 15px 0ox;
+		font-size:90%;
+}
+.more-articles p:last-child{
+		border-bottom:none;
+}
+
+aside {
+		width:230px;
+		float:left;
+		padding:0px 0px 0px 20px;
+}
+aside section a{
+		display:block;
+		padding:10px;
+		border-bottom:1px solid #eeeeee;
+}
+aside section a:hover {
+		color:#985d6a;
+		background-color:efefef;
+}
+a {
+		color:#de6581;
+		text-decoration:none;
+}
+h1, h2, h3 {
+		font-weight:normal;
+}
+h2 {
+		margin:10px 0px 5px 0px;
+		padding:0px;
+}
+h3 {
+		margin:0px 0px 10px 0px;
+		color:#de6581;
+}
+aside h2 {
+		padding:30px 0px 10px 0px;
+		color:#de6581;
+}
+footer {
+		font-size:80%;
+		padding:7px 0px 0px 20px;
+}
+
+}
