@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>12번</title>
+		<style type="text/css">
+			p{
+				position: absolute;
+				margin: 5px;
+				font-size: 60px;
+				font-family: Geogia, Times, sans-serif;
+				font-style: italic;
+			}
+			
+			p#text{
+				color: purple;
+				z-index: 2;
+				/*
+				text-shadow: 3px 3px 3px black;
+				*/ 
+			}
+			
+			p#shadow{
+				color: gray;
+				top: 12px;
+				left: 12px;
+				z-index: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<p id="text">Shadow Using Positioning!</p>
+		<p id="shadow">Shadow Using Positioning!</p>
+		
+	</body>
+</html>

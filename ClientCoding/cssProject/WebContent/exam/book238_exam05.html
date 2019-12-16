@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>14번</title>
+		<style type="text/css">
+			div.parentDiv{
+				position: relative;
+				width: 500px;
+				height: 500px;
+				border: 1px solid black;
+				margin-left: 30px; 
+			}
+		
+			div.childDiv{
+				position: absolute;
+				width: 249px;
+				height: 249px;
+				border: 1px solid green;
+				/*텍스트 정렬*/
+				text-align: center;
+				line-height: 250px;
+			}
+
+			div.leftTop{
+				background: #FEE;
+				left: 0px;
+				top: 0px;
+			}
+
+			div.rightTop{
+				background: #EEF;
+				right: 0px;
+				top: 0px;
+			}
+
+
+			div.leftBottom{
+				background: #EFE;
+				left: 0px;
+				bottom: 0px;
+			}
+
+			div.rightBottom{
+				background: #FFE;
+				right: 0px;
+				bottom: 0px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="parentDiv">
+			<!--
+				id는 고유라 하나 부여, class는 여러개 중첩으로 부여할 때 사용. 
+				여러개의 class를 부여할 때는 띄어쓰기로 구분
+			-->
+			<div class="childDiv leftTop">left:0; top:0</div>
+			<div class="childDiv rightTop">right:0; top:0</div>
+			<div class="childDiv leftBottom">left:0; bottom:0</div>
+			<div class="childDiv rightBottom">right:0; bottom:0</div>
+		</div>
+	</body>
+</html>

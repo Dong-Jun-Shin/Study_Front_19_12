@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+
+/* 홈 컨텐츠 영역에 대한 css */
+article.more-articles{
+   display: inline;
+   float: left;
+   padding: 5px;
+   margin: 10px;
+   width: 290px;   
+   border-top: 1px solid #ffffff;
+}
+
+article.more-articles img{
+   width: 290px;
+   height: 190px;
+   border: 1px solid #eeeeee;   
+}
+
+article.more-articles p{
+   border-bottom: 1px solid #807c72;
+   padding: 5px 0px 15px 0px;
+   font-size: 90%;
+}
+
+article.more-articles p:last-child{
+   border-bottom: none;
+}
