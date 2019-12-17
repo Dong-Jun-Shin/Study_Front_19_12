@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>두 수의 합</title>
+		
+		<link rel="shortcut icon" href="../image/icon.png" />
+		<link rel="apple-touch-icon" href="../image/icon.png" />
+		
+		<style type="text/css">
+			div *{
+				margin: 0px 5px;
+			}
+			
+			div input{
+				/*
+				background-color: rgba(100, 200, 150, 0.3);
+				*/
+				background: linear-gradient(to bottom, rgba(100, 200, 150, 0), rgba(100, 200, 150, 1));
+				border: 1px solid rgba(100, 200, 150, 1);
+			}
+
+			div input:nth-child(3), div button{
+				/*
+				background-color: rgba(100, 200, 150, 0.3);
+				*/
+				background: linear-gradient(to bottom, rgba(100, 200, 150, 1), rgba(100, 200, 150, 0));
+				border: 1px solid rgba(100, 200, 150, 1);
+			}
+		</style>
+		
+		<script type="text/javascript">
+			function add(){
+				// 값을 가져오는 2가지 방법
+				
+				// name을 이용해서 값을 가져오는 방법 
+				var num1 = parseInt(document.myForm.num1.value);
+				var num2 = parseInt(document.myForm.num2.value);
+				
+				document.myForm.result.value = num1 + num2;
+				
+				// id를 이용해서 값을 가져오는 방법 (계층 구조에 많이 사용 - 요즘 많이 사용되는 방법)
+				var num1 = parseInt(document.getElementById("num1").value);
+				var num2 = parseInt(document.getElementById("num2").value);
+				
+				document.getElementById("result").value = num1 + num2;
+			}
+		</script>
+	</head>
+	<body>
+		<h2>두 수의 합</h2>
+		<form name="myForm" action="" method="POST">
+			<div>
+				<input type="text" name="num1" id="num1"/>
+				<label>+</label>
+				<input type="text" name="num2" id="num2"/>
+				<button type="button" onclick="add()">=</button>
+				<input type="text" name="result" id="result" readonly="readonly"/>
+			</div>
+		</form>
+	</body>
+</html>

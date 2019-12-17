@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>Hello Javascript</title>
+		
+		<link rel="shortcut icon" href="../image/icon.png" />
+		<link rel="apple-touch-icon" href="../image/icon.png" />
+		
+		<!-- javascript start -->
+		<script type="text/javascript">
+			/* 
+			스크립트 내부에서 줄로 구분 가능, 한 줄에 여러 구문이 있다면 ';'은 필수
+			
+			alert("안녕하세요. Javascript~!!!");
+			document.write("자바<br /> 스크립트");
+			document.write("<h1>Hello JavaScript</h1>");
+			document.write("<span>span1</span>");
+			document.write("<span>span2</span>");
+			*/
+			
+			/*
+				function 함수명() : 함수 선언
+				.getElementById(id문자열) : 특정 아이디 선택
+				.innerHTML : 태그 내부에 들어갈 값 지정
+			*/
+			function pageLoad(){
+				document.getElementById("title").innerHTML = "Hello. pageLoad() Func";
+			}
+			
+			alert("Hello job1");
+			alert("Hello job2");
+		</script>
+		<!-- javascript end -->
+	</head>
+	
+	<!-- onload 속성 : 문서 불러올 때, 실행 -->
+	<body onload="pageLoad()">
+		<h1 id="title"></h1>
+	</body>
+</html>

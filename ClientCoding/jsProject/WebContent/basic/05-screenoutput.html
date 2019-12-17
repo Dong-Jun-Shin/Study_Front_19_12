@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>화면 출력</title>
+		
+		<link rel="shortcut icon" href="../image/icon.png" />
+		<link rel="apple-touch-icon" href="../image/icon.png" />
+		
+		<style type="text/css">
+			table, th, td{
+				border-collapse: collapse;
+				border: 3px solid lightblue;
+			}
+			
+			tr#head > th{
+				background-color: #ff0000;
+			}
+		</style>
+		
+		<script type="text/javascript">
+			var title1 = "컴퓨터와 IT기술의 이해 [개정판-2판]";
+			var title2 = "이화식(기업인) 저, 대용량 데이터베이스 솔루션";
+			var title3 = "김은옥 저, 은노기의 JSP 2.3 웹 프로그래밍";
+			
+			document.write("<table>");
+			document.write("<caption> 베스트 셀러 </caption>");
+			document.write("<tr id=\"head\">");
+			document.write("<th> 순위 </th>");
+			document.write("<th> 제목 </th>");
+			document.write("</tr>");
+			document.write("<tr><th> 1 </th> <td> " + title1 + "</td></tr>");
+			document.write("<tr><th> 2 </th> <td> " + title2 + "</td></tr>");
+			document.write("<tr><th> 3 </th> <td> " + title3 + "</td></tr>");
+			document.write("</table>");
+			
+		</script>
+	</head>
+	<body>
+		<p>Title: A Simple JavaScript Example for Screen Output</p>
+	</body>
+</html>

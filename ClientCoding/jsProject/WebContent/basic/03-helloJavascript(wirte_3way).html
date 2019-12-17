@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>Hello Javascript</title>
+		
+		<link rel="shortcut icon" href="../image/icon.png" />
+		<link rel="apple-touch-icon" href="../image/icon.png" />
+		
+		<!--[if lt IE 9] IE9라면 실행>
+		<script src="../js/html5shiv.js"></script>
+		<![endif]-->
+		
+		<!-- javascript start -->
+		<!-- 1.내부 -->
+		<script type="text/javascript">
+			alert("안녕하세요. 내부 파일 작성");
+		</script>
+
+		<!-- 2.외부 -->
+		<script type="text/javascript" src="../js/03-sayHello.js"></script>
+		<!-- javascript end -->
+	</head>
+	<body>
+		<!-- 3.인라인 -->
+		<button type="button" onclick="alert('button button 인라인 직접 작성')">button 버튼을 누르세요!</button>
+		<input type="button" value="input 버튼을 누르세요!" onclick="alert('input button 인라인 직접 작성')" />
+	</body>
+</html>

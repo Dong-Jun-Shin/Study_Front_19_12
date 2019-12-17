@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>value</title>
+		
+		<link rel="shortcut icon" href="../image/icon.png" />
+		<link rel="apple-touch-icon" href="../image/icon.png" />
+		
+		<script type="text/javascript">
+			/*
+				이 블록 안에서는 여러 줄을 주석으로 할 수 있습니다.
+				주로 여러 줄의 코드를 주석으로 막아놓고자 하는 경우 사용됩니다.
+			*/
+			
+			// 변수 선언
+			var num1;							// (object)
+			var msg1;							// (object)
+			
+			// 변수의 할당
+			num1 = 12345;						// (number)
+			msg1 = "Hello Javascript";			// (string)
+			
+			// 변수의 선언과 할당
+			var num2 = 3.14;					// (number)
+			var msg2 = "안녕하세요. 자바스크립트";	// (string)
+			var msg3 = 'A';						// (string)
+			
+			// 브라우저의 콘솔 영역에 출력하기
+			console.log("num1="+num1);	// num1=12345
+			console.log(typeof num1);	// number
+			console.log(typeof msg1);	// string
+			console.log(typeof msg3);	// string
+			console.log(msg1);			// Hello Javascript(string)
+			console.log(num1);			// 12345(number)
+			console.log(num2);			// 3.14(number)
+			console.log(msg2);			// 안녕하세요. 자바스크립트(string)
+			console.log(msg3);			// A(string)
+			
+			// boolean값의 사용
+			var isMan = true;						// (boolean)
+			console.log(isMan);						// true
+			console.log(typeof isMan);				// boolean (변수만 있을 경우, 띄어쓰기 typeof로 사용 가능)
+						
+			console.log(typeof(10<3));				// boolean (수식이 있을 경우, 함수형 typeof를 사용 가능)
+			console.log(typeof 10<3);				// false (typeof 적용x)
+			console.log(10<3);						// false
+			console.log("(10<3)" + typeof(10<3));	// (10<3)boolean
+			
+			// null값 - null을 대입
+			var value1 = null;							// (object)
+			console.log(value1);						// null
+			console.log("value1=" + typeof(value1));	// value1=object
+			
+			// undefined - 선언만 된 상태
+			var value2, value3;				// (object)
+			console.log(value2);			// undefined
+			console.log(typeof value2);		// undefined 
+			
+			value3 = value2;				// (object)
+			console.log(value3);			// undefined
+			console.log(typeof value3);		// undefined
+			
+			var number1 = "3";				// (string)
+			var number2 = 2;				// number
+			
+			result1 = number2 + 5 + number1;	// (숫자 + 숫자) + 문자
+			result2 = number1 + number2;		// 문자 + 숫자
+			
+			console.log("result1 = " + result1);	// result1 = 73
+			console.log("result2 = " + result2);	// result2 = 32
+			
+			//
+			var length = 123, length_num, length_str;
+			
+			length_num = length + 10;				// 133 (123 + 10)
+			length_str = length.toString() + 10;	// 12310 ("123" + 10)
+			
+			document.write('Length in Number: ' + length_num + '<br />');	// Length in Number: 133
+			document.write('Length in String: ' + length_str + '<br />');	// Length in String: 12310
+			
+			var num = parseInt(length_str) + 20;			// 12330 (12310 + 20)
+			document.write('Length in Integer: ' + num);	// Length in Integer: 12330 
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>
