@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>숫자 맞추기</title>
+		
+		<link rel="shortcut icon" href="../image/icon.png" />
+		<link rel="apple-touch-icon" href="../image/icon.png" />
+		
+		<style type="text/css">
+			
+		</style>
+		
+		<script type="text/javascript">
+			/*
+				Math.floor (소수점 버림, 즉 내림)
+				Math.ceil (소수점 버리고 정수부분 1 올림, 즉 올림)
+				Math.round (소수점 첫째자리 0~4는 내리고 5~9는 올림, 즉 반올림)
+				Math.random (0 <= x < 1)
+			*/
+			// 바깥쪽에 선언된 변수는 전역변수로써 사용됨
+			var comAnswer = Math.ceil(Math.random()*100);
+			var chkCnt = 0;
+			
+			function check(){
+				var userAnswer = document.getElementById("txtAnswer");
+				var txtChkCnt = document.getElementById("txtChkCnt");
+				var txtHint = document.getElementById("txtHint");	
+				
+				if(comAnswer != userAnswer.value){
+					txtChkCnt.value = ++chkCnt;
+				}
+				
+				if(comAnswer > userAnswer.value){
+					txtHint.value = "답이 더 높습니다.";
+				}else if(comAnswer < userAnswer.value){
+					txtHint.value = "답이 더 낮습니다.";
+				}else if(comAnswer == userAnswer.value){
+					txtHint.value = "정답입니다.";
+				}
+				
+				document.getElementById("txtAnswer").value = "";
+			}
+		</script>
+	</head>
+	<body>
+		<h2>숫자 맞추기 게임</h2>
+		<form>
+			<p>
+				<label>이 게임은 컴퓨터가 생성한 숫자를 맞추는 게임입니다.<br /> 숫자는 1부터 100 사이에 있습니다.<br /></label>
+				<label>숫자:</label>
+				<input type="text" name="txtAnswer" id="txtAnswer">
+				<button type="button" name="chkBtn" id="chkBtn" onclick="check()">확인</button>
+			</p>
+			<p>
+				<label>추측횟수:</label>
+				<input type="text" name="txtChkCnt" id="txtChkCnt" value="0" readonly="readonly">
+				<label>힌트:</label>
+				<input type="text" name="txtHint" id="txtHint" readonly="readonly">
+				<br />
+			</p>
+		</form> 
+	</body>
+</html>

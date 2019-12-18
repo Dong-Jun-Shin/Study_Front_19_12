@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>Insert title here</title>
+		
+		<link rel="shortcut icon" href="../image/icon.png" />
+		<link rel="apple-touch-icon" href="../image/icon.png" />
+		
+		<script type="text/javascript">
+			// paramiter + return
+			function add(num1, num2){
+				return num1 + num2;
+			}
+			
+			// paramiter + print
+			function sum(num1, num2){
+				var result = num1 + " + " + num2 + " = " + (add(num1, num2));
+				document.getElementById("title").innerHTML = result;
+			}
+			
+			// add() + sum() + prompt
+			function printResult(){
+				var x = parseInt(prompt("숫자를 입력해주세요.", ""));
+				var y = parseInt(prompt("숫자를 입력해주세요.", ""));
+				
+				var result = add(x, y);
+				var print = x + " + " + y + " = " + (x + y);
+				document.getElementById("title").innerHTML = print;
+			}
+		</script>
+	</head>
+	<body>
+		<h2 id="title">결과 출력</h2>
+		<button type="button" onclick="printResult()">두수의 합</button>
+		<!-- 
+		<button type="button" onclick="add(4, 6)">두수의 합</button>
+		 -->
+	</body>
+</html>
