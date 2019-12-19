@@ -4,12 +4,99 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
-		<title>Insert title here</title>
+		<title>추노 - 노비를 쫓다</title>
 		
 		<link rel="shortcut icon" href="../image/icon.png" />
 		<link rel="apple-touch-icon" href="../image/icon.png" />
+		
+		<link rel="stylesheet" type="text/css" href="../css/default.css">
+		<link rel="stylesheet" type="text/css" href="../css/main.css">
+		<style type="text/css">
+			*{
+				padding: 0px;
+				margin: 0px auto;
+				box-sizing: border-box;
+				list-style: none;
+			}
+			
+			.container{
+				width: 1080px;
+				height: 100%;
+				padding: 0px 20px;
+			}
+			
+			li{
+				float: left;
+			}
+			
+			a{
+				width: 100%;
+				height: 100%;
+				color: 
+			}
+			
+			body{
+				background: url(../image/bg.jpg) no-repeat;
+			}
+			
+			header{
+				text-align: center;
+			}
+		</style>
 	</head>
 	<body>
+		<header>
+			<img src="../image/logo.png" name="logo" id="logo" />
+		</header>
 		
+		<nav>
+			<div class="container">
+				<ul class="leftMenu">
+					<li class="active"><a href="main.html">Home</a></li>
+					<li class="dropdown">
+						<a href="#">Intro</a>
+						<span class="dropmenu">
+							<span><a href="#">개요</a></span>
+							<span><a href="#">정보</a></span>
+							<span><a href="#">스토리</a></span>
+						</span>	
+					</li>
+					<li><a href="#">Character</a></li>
+					<li>
+						<a href="#">Media</a>
+						<span class="dropmenu">
+							<span><a href="#">OST</a></span>
+							<span><a href="#">동영상</a></span>
+						</span>
+					</li>
+				</ul>
+				<ul class="rightMenu">
+					<li><a href="#">Connect_Us</a>
+				</ul>
+			</div>
+		</nav>
+		
+		<section id="section_video">
+			<div class="container">
+				<video controls autoplay muted loop>
+					<source src="../image/Opening.mp4" type="video/mp4">
+				</video>
+			</div>
+		</section>
+		
+		<footer>
+			<div class="top">
+				<div class="container">
+					<span>| 저작권 지침 및 신고 |</span>
+				</div>
+			</div>
+			<div class="container">
+				<div>사이트 관련 문의 : blueeye125@naver.com</div>
+				<div class="copyright">
+					Copyright &copy; 2018 mrhi, Inc. All rights reserved.
+					Contact webmaster for more information.
+				</div>
+			</div>
+		</footer>
 	</body>
 </html>
