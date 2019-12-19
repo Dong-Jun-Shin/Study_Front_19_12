@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>Insert title here</title>
+		
+		<link rel="shortcut icon" href="../image/icon.png" />
+		<link rel="apple-touch-icon" href="../image/icon.png" />
+		
+		<style type="text/css">
+			label{
+				margin: 1px;
+			}
+			
+			label#qMark{
+				color: red;
+				font-size: 50px;
+			}
+			
+			a{
+				text-decoration: none;
+			}
+			
+			div > input{
+				width: 70px;
+			}
+			
+		</style>
+		
+		<script type="text/javascript">
+			function mouseOverColor(elem){
+				var colors = ["red", "yellow", "green", "blue", "purple"];
+				document.getElementById("bg").style.backgroundColor = colors[elem.id];
+				//document.bgColor = color;
+			}
+			
+			function mouseOutColor(){
+				document.getElementById("bg").style.backgroundColor = "";
+			}
+			
+			function mouseOverAdd(){
+				var num1 = parseInt(document.getElementById("num1").value);
+				var num2 = parseInt(document.getElementById("num2").value);
+				var qMark = document.getElementById("qMark");
+				
+				qMark.innerHTML = num1 + num2;
+			}
+			
+			function mouseOutAdd(){
+				document.getElementById("num1").value = "";
+				document.getElementById("num2").value = "";
+				document.getElementById("qMark").innerHTML = "?";
+			}
+			
+			function goUrl(){
+				var url = document.getElementById("txtUrl").value;
+				//iframe 안에서 띄운다.
+				//document.getElementsByName("page")[0].src = url;
+				page.location.href = url;
+				
+				//location.href = url : 지정한 주소로 창을 이동한다.
+				//location.href = url;
+			}
+			
+			function licenseFocus(){
+				var lc1 = document.getElementById("txtLicense1").value;
+				if(lc1.length == 6){
+					document.getElementById("txtLicense2").focus();	
+				}
+			}
+			
+			function showMessage(msg){
+				document.getElementById("msg").innerHTML = msg;
+			}
+			
+			function dataChange(){
+				var data = document.getElementById("id");
+				data.value = data.value.toLowerCase();	// 입력 데이터 소문자 변환
+			}
+			
+			function page(){
+				document.getElementById("pArea").innerHTML = "오늘 하루도 최선을 다해....";				
+			}
+			
+			var imgNum = 1;
+			function quizChange(){
+				var img = document.getElementById("img1");
+
+				if(imgNum == 1){
+					img.src = "../image/quiz2.jpg";
+					imgNum = 2;
+				}else{ 
+					img.src = "../image/quiz1.jpg";
+					imgNum = 1;
+				}
+			}
+		</script>
+	</head>
+	<body id="bg" onload="page()">
+		<h1>onmouseover / onmouseout 이벤트 핸들러1</h1>
+		<div>
+			<!-- onmouseover="mouseOverColor('green')" -->
+			<label id="0" onmouseover="mouseOverColor(this)" onmouseout="mouseOutColor(this)">예</label>
+			<label id="1" onmouseover="mouseOverColor(this)" onmouseout="mouseOutColor(this)">리</label>
+			<label id="2" onmouseover="mouseOverColor(this)" onmouseout="mouseOutColor(this)">바</label>
+			<label id="3" onmouseover="mouseOverColor(this)" onmouseout="mouseOutColor(this)">보</label>
+			<label id="4" onmouseover="mouseOverColor(this)" onmouseout="mouseOutColor(this)">야</label>
+			<br />
+			<a href="#" onmouseover="document.bgColor = 'green'" onmouseout="document.bgColor = 'white'">예</a>
+			<a href="#" onmouseover="document.bgColor = 'red'" onmouseout="document.bgColor = 'white'">리</a>
+			<a href="#" onmouseover="document.bgColor = 'purple'" onmouseout="document.bgColor = 'white'">바</a>
+			<a href="#" onmouseover="document.bgColor = 'yellow'" onmouseout="document.bgColor = 'white'">보</a>
+			<a href="#" onmouseover="document.bgColor = 'blue'" onmouseout="document.bgColor = 'white'">야</a>
+		</div>
+		
+		<h1>onmouseover / onmouseout 이벤트 핸들러2</h1>
+		<div>
+			<input id="num1" type="text" placeholder="숫자입력" />
+			<label>+</label>
+			<input id="num2" type="text" placeholder="숫자입력" />
+			<label>=</label>
+			<label id="qMark" onmouseover="mouseOverAdd()" onmouseout="mouseOutAdd()">?</label>
+			<p>결과를 보시려면 수식(?) 위에 마우스를 올리세요.</p>
+		</div>
+		
+		<h1>onclick 이벤트 핸들러</h1>
+		<form name="form2" id="form2">
+			<label>URL:</label>
+			<input type="text" name="txtUrl" id="txtUrl" value="http://" />
+			<input type="button" value="GO" onclick="goUrl()" />
+			<br />
+		</form>
+		<div>
+			<iframe name="page" width="500px" height="500px"></iframe>
+		</div>
+
+		<h1>onclick 이벤트 핸들러2</h1>
+		<div>
+			<img src="../image/quiz1.jpg" id="img1" onclick= "quizChange()"/>
+		</div>
+		
+		<h1>keyup 이벤트 핸들러</h1>
+		<!-- 
+			onkeyup : 
+		 -->
+		<form name="form3" id="form3">
+			<label>주민등록번호:</label>
+			<input type="text" name="txtLicense1" id="txtLicense1" maxlength="6" onkeyup="licenseFocus()"/>
+			<label>-</label>
+			<input type="text" name="txtLicense2" id="txtLicense2" maxlength="7" />
+		</form>
+
+		<h1>onfocus와 onblur 이벤트 핸들러</h1>
+		<!-- 
+			onfocus : 포커스가 잡힐 시
+			onblur : 포커스 해제 시
+			onchange : 변화가 생길 시
+		 -->
+		<form name="form4" id="form4">
+			<label>아이디</label>
+			<input type="text" name="id" id="id" maxlength="12" onfocus="showMessage('아이디 입력해 주세요')" 
+			onblur="showMessage('사용 가능한 아이디입니다.')" onchange="dataChange()" />
+			<span id="msg"></span>
+		</form>
+		
+		<!-- 
+			스크립트가 먼저 실행 후, body가 실행되서 
+			구조가 생기기 전에 지목하면 오류가 뜨는 것에 주의 
+			
+			-> 주기 위한 코드를 함수로 만들어서 'onload=함수'로 해결
+		-->
+		<h1>onload 이벤트 핸들러</h1>
+		<p id="pArea"></p>
+	</body>
+</html>
