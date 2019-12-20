@@ -14,56 +14,60 @@
 		
 	</head>
 	<body>
-		<header>
-			<img src="../image/logo.png" name="logo" id="logo" />
-		</header>
-		
-		<nav>
-			<div class="container">
-				<ul class="leftMenu">
-					<li class="active"><a href="main.html">Home</a></li>
-					<li class="dropdown">
-						<a href="#">Intro</a>
-						<span class="dropmenu">
-							<span><a href="#">개요</a></span>
-							<span><a href="#">정보</a></span>
-							<span><a href="#">스토리</a></span>
-						</span>	
-					</li>
-					<li><a href="#">Character</a></li>
-					<li class="dropdown">
-						<a href="#">Media</a>
-						<span class="dropmenu">
-							<span><a href="#">OST</a></span>
-							<span><a href="#">동영상</a></span>
-						</span>
-					</li>
-				</ul>
-				<ul class="rightMenu">
-					<li><a href="#">Connect_Us</a></li>
-				</ul>
-			</div>
-		</nav>
-		
-		<section id="section_video">
-			<video width="100%" height="auto" autoplay muted loop>
-				<source src="../image/Opening.mp4" type="video/mp4">
-			</video>
-		</section>
-		
-		<footer>
-			<div class="top">
+		<div id="wrap">
+			<header>
+				<img src="../image/logo.png" name="logo" id="logo" />
+			</header>
+			
+			<nav>
 				<div class="container">
-					<span>| 저작권 지침 및 신고 |</span>
+					<ul class="leftMenu">
+						<li class="active"><a href="main.html">Home</a></li>
+						<li class="dropdown">
+							<a href="intro_summary.html">Intro</a>
+							<span class="dropmenu">
+								<span><a href="intro_summary.html">개요</a></span>
+								<span><a href="intro_info.html">정보</a></span>
+								<span><a href="intro_story.html">스토리</a></span>
+							</span>	
+						</li>
+						<li><a href="character.html">Character</a></li>
+						<li class="dropdown">
+							<a href="media_music.html">Media</a>
+							<span class="dropmenu">
+								<span><a href="media_music.html">OST</a></span>
+								<span><a href="media_video.html">동영상</a></span>
+							</span>
+						</li>
+					</ul>
+					<ul class="rightMenu">
+						<li><a href="connect_us.html">Connect Us</a></li>
+					</ul>
 				</div>
-			</div>
-			<div class="container">
-				<div>사이트 관련 문의 : blueeye125@naver.com</div>
-				<div class="copyright">
-					Copyright &copy; 2018 mrhi, Inc. All rights reserved.
-					Contact webmaster for more information.
+			</nav>
+			
+			<section id="section_video" >
+				<div class="shadow">
+					<video width="100%" height="auto" autoplay muted loop>
+						<source src="../image/Opening.mp4" type="video/mp4">
+					</video>
 				</div>
-			</div>
-		</footer>
+			</section>
+			
+			<footer>
+				<div class="top">
+					<div class="container">
+						<span>| 저작권 지침 및 신고 |</span>
+					</div>
+				</div>
+				<div class="container">
+					<div>사이트 관련 문의 : blueeye125@naver.com / 주소 : 서울 중구 청계천로 400 이마트청계천점 1F</div>
+					<div class="copyright">
+						Copyright &copy; 2018 mrhi, Inc. All rights reserved.
+						Contact webmaster for more information.
+					</div>
+				</div>
+			</footer>
+		</div>
 	</body>
 </html>

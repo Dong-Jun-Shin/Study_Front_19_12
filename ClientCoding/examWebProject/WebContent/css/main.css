@@ -1,1 +1,16 @@
 @charset "UTF-8";
+
+section#section_video {
+	margin: 10px auto;
+	padding: 50px 100px;
+	max-width: 1920px;
+	z-index: 1;
+}
+
+section#section_video>div.shadow{
+	width: 100%;
+	box-shadow: -15px -15px 20px 0.1px #474747, 
+				15px -15px 20px 0.1px #474747, 
+				15px 15px 20px 0.1px #474747, 
+				-15px 15px 20px 0.1px #474747;
+}
