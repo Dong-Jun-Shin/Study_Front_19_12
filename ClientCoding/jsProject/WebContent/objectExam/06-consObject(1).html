@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>Constructure</title>
+		
+		<link rel="shortcut icon" href="../image/icon.png" />
+		<link rel="apple-touch-icon" href="../image/icon.png" />
+		
+		<script type="text/javascript">
+			// 생성자라고 하는 함수로 객체를 생성할 수 있다.
+			// 객체를 생성하는 생성자
+			function People(name, gender){
+				this.name = name;
+				this.gender = gender;
+				this.setName = function(name){
+					this.name = name;
+				};
+				
+				this.getName = function(){
+					return this.name;
+				};
+				
+				this.setGender = function(gender){
+					this.gender = gender;
+				};
+				
+				this.getGender = function(){
+					return this.gender;
+				};
+				
+				this.toString = function(){
+					return "이름: " + this.name + " 성별: " + this.gender + "<br />";
+				}
+			}
+			
+			// 객체 생성할 때 new 연산자를 사용한다.
+			var people = new People("홍길동", "남자");
+			document.write(people.toString());
+			
+			people.setName("이영희");
+			people.setGender("여자");
+			document.write(people.toString());
+			
+			/*
+				// 프로퍼티(=멤버변수)의 사용
+				document.write("<h1>" + people.name + "님은 " + people.gender + "입니다.</h1>");
+			*/
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

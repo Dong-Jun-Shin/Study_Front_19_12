@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>사용자 정의 객체 생성</title>
+		
+		<link rel="shortcut icon" href="../image/icon.png" />
+		<link rel="apple-touch-icon" href="../image/icon.png" />
+		
+		<!-- 사용자 정의 객체
+		<script type="text/javascript" src="../js/calc1.js"></script>
+		 -->
+		<!-- 객체 리터럴(상수)로 생성 (싱글톤) -->
+		<script type="text/javascript" src="../js/calc2.js"></script>
+		 
+		<script type="text/javascript"></script>
+	</head>
+	<body>
+		<h1>두 수의 연산</h1>
+		<form id="form">
+			<input type="text" name="num1" id="num1">
+			<select size="1" name="oper" id="oper">
+				<option value="+">+</option>
+				<option value="-">-</option>
+				<option value="*">*</option>
+				<option value="/">/</option>
+			</select>
+			<input type="text" name="num2" id="num2">
+		</form>
+		<label>=</label>
+		<label id="result" onmouseover="operResult(this)" onmouseout="formClear()">?</label>
+	</body>
+</html>
