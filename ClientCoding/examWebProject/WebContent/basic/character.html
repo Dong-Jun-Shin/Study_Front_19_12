@@ -6,12 +6,20 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
 		<title>추노 - 등장인물</title>
 		
+		<!-- 폰트 -->
+	    <link href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script|Permanent+Marker&display=swap" rel="stylesheet">
+    	<link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap" rel="stylesheet">
+		
+		<!-- 아이콘 -->
 		<link rel="shortcut icon" href="../image/icon.png" />
 		<link rel="apple-touch-icon" href="../image/icon.png" />
 		
+		<!-- 스타일 -->
 		<link rel="stylesheet" type="text/css" href="../css/default.css">
 		<link rel="stylesheet" type="text/css" href="../css/character.css">
 		
+		<!-- 자바스크립트 -->
+		<script type="text/javascript" src="../js/character.js"></script>
 	</head>
 	<body>
 		<div id="wrap">
@@ -22,16 +30,16 @@
 			<nav>
 				<div class="container">
 					<ul class="leftMenu">
-						<li class="active"><a href="main.html">Home</a></li>
+						<li><a href="main.html">Home</a></li>
 						<li class="dropdown">
 							<a href="intro_summary.html">Intro</a>
 							<span class="dropmenu">
 								<span><a href="intro_summary.html">개요</a></span>
 								<span><a href="intro_info.html">정보</a></span>
-								<span><a href="intro_story.html">스토리</a></span>
+								<span><a href="intro_feature.html">작품 특징</a></span>
 							</span>	
 						</li>
-						<li><a href="character.html">Character</a></li>
+						<li class="active"><a href="character.html">Character</a></li>
 						<li class="dropdown">
 							<a href="media_music.html">Media</a>
 							<span class="dropmenu">
@@ -46,8 +54,42 @@
 				</div>
 			</nav>
 			
-			<section id="" >
-				<p>등장인물</p>
+			<section>
+				<div id="pageName">
+					<label>등장인물</label>
+				</div>
+				<img name="relation" id="relation" src="../image/relation.jpg" alt="relation.jpg" usemap="#rel_map" />
+				<map name="rel_map" id="rel_map">
+					<area shape="rect" coords="396,544,854,986" alt="person_img" href="#" onclick="showPerson(0)">
+					<area shape="rect" coords="984,422,1148,574" alt="person_img" href="#" onclick="showPerson(1)">
+					<area shape="rect" coords="1070,634,1222,776" alt="person_img" href="#" onclick="showPerson(2)">
+					<area shape="rect" coords="1074,846,1208,990" alt="person_img" href="#" onclick="showPerson(3)">
+					<area shape="rect" coords="576,208,718,352" alt="person_img" href="#" onclick="showPerson(4)">
+					<area shape="rect" coords="892,224,1004,332" alt="person_img" href="#" onclick="showPerson(5)">
+					<area shape="rect" coords="1302,416,1406,510" alt="person_img" href="#" onclick="showPerson(6)">
+					<area shape="rect" coords="1348,546,1452,648" alt="person_img" href="#" onclick="showPerson(7)">
+					<area shape="rect" coords="1228,282,1328,386" alt="person_img" href="#" onclick="showPerson(8)">
+					<area shape="rect" coords="1134,168,1230,268" alt="person_img" href="#" onclick="showPerson(9)">
+					<area shape="rect" coords="384,1212,536,1352" alt="person_img" href="#" onclick="showPerson(10)">
+					<area shape="rect" coords="624,1262,734,1368" alt="person_img" href="#" onclick="showPerson(11)">
+					<area shape="rect" coords="98,946,236,1088" alt="person_img" href="#" onclick="showPerson(12)">
+					<area shape="rect" coords="926,1094,1060,1228" alt="person_img" href="#" onclick="showPerson(13)">
+					<area shape="rect" coords="188,358,336,492" alt="person_img" href="#" onclick="showPerson(14)">
+					<area shape="rect" coords="94,544,196,650" alt="person_img" href="#" onclick="showPerson(15)">
+				</map>
+				<article class="main-articles" id="main_articles">
+					<figure>
+						<img name="character_img" id="character_img" width="290" height="auto" src="../image/person/main_person_1.jpg" alt="main_person_1" >
+					</figure>
+					<h2 id="character_head">이대길</h2>
+					<p class="contents" id="character_p" >
+						추노의 메인 주인공. 도망친 노비를 추적해 잡아오는 무자비한 현상금 사냥꾼. 저잣거리엔 부모 제삿날에도 기생끼고 
+						노는 금수같은 새끼라는 평판이 자자하다. 도망친 노비에 대해 집착하는 이유는 내거 노비였던 큰놈이와 큰놈이의 여동생인 
+						언년이 때문에 양친이 죽고 집안이 망했기 때문이다. 성격이 개차반이고 돈을 밝히는 수전노로 유명하며 실제로 추노를 하여 
+						번돈을 같은 추노패인 최장군과 왕손이를 속이며 착복하고 있다. 꼭 그들뿐만은 아니고 위조된 호패를 쓰는 사람들을 잡아서 
+						주머니를 터는 듯 하다.
+					</p>
+				</article>
 			</section>
 			
 			<footer>

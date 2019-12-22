@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+section>div.featureBox {
+	width: 50%;
+	height: auto;
+	margin: 100px auto 0px auto;
+}
+
+section>div.subFeature{
+	margin: 200px auto 00px auto;
+}
+
+section>div#videoBox {
+	width: 100%;
+	height: auto;
+	margin: 0px auto 100px auto;
+}
+
+section>div#videoBox > .videoFrame{
+	float: left;
+	width: 50%;
+}
+
+div.featureBox, div#videoBox {
+	float: left;
+	padding: 0px 100px;
+}
+
+div#img {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+div#img>img {
+	padding-left: 10%;
+	height: 100%;
+	width: 100%;
+}
+
+h2.introTitle {
+	font-size: 80px;
+}
+
+p.contents {
+	padding-left: 75px;
+	margin-bottom: 0px;
+	font-size: 50px;
+}
+
+p.subContents{
+	margin-bottom: 0px;
+}
+
+div.videoFrame {
+	margin-bottom: 100px;
+	padding: 0px 30px;
+}
+
+footer {
+	float: left;
+}
