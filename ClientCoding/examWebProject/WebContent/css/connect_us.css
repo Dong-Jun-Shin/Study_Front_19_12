@@ -1,1 +1,56 @@
 @charset "UTF-8";
+
+nav .rightMenu > li.active {
+	color: white;
+	background: #101010;
+}
+
+article.articles {
+    clear: both;
+    width: 90%;
+    height: auto;
+    margin: 25px auto;
+    padding: 0px 35px;
+}
+
+article.map {
+    margin: 50px auto;
+}
+
+article.map img#map{
+	width: 100%;
+	border: 2px solid #101010;
+}
+
+.articles figure{
+	float: left;
+}
+
+.articles img#logo {
+    width: 300px;
+    margin: 10px 0px;
+}
+
+div.production {
+	height: 183px;
+	line-height: 61px;
+}
+
+div.map {
+	height: 122px;
+	line-height: 40px;
+	padding: 20px 0px;
+}
+
+div.info > span{
+	margin: 0px 35px;
+}
+
+div.production > span{
+	font-size: 40px;
+	font-family: 'Nanum Pen Script', cursive;
+}
+
+div.production > span > label{
+	font-size: 30px;
+}

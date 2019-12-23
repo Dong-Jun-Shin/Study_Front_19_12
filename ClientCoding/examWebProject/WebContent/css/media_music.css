@@ -1,34 +1,34 @@
 @charset "UTF-8";
 
-article.articles{
-	clear: both;
-	width: 100%;
-	height: 600px;	
+article.articles {
+    clear: both;
+    width: 90%;
+    height: auto;
+    margin: 25px;
 }
 
 article.main{
-	height: 550px;	
+	height: 275px;	
 }
 
 hgroup{
-	margin-top: 40px;
+	margin-top: 20px;
 }
 
 hgroup a{
-	width: 400px;
+	width: 200px;
 }
 
 .articles figure{
 	float: left;
-	padding: 5px;
-	margin: 10px;
-	border: 1px solid #eeeeee;
+	padding: 3px;
+	margin: 5px;
 }
 
-.articles figure > img.cover{
-	width: 500px;
-	margin-top: 30px;
-	border-radius: 10px;
+.articles figure > img.cover {
+    width: 200px;
+    margin-top: 10px;
+    border-radius: 5px;
 }
 
 .articles figcaption{
@@ -37,12 +37,12 @@ hgroup a{
 }
 
 h2{
-	font-size: 80px;
+	font-size: 40px;
 }
 
 h2 label{
-	font-size: 50px;
-	font-weight: 10px;
+	font-size: 25px;
+	font-weight: 5px;
 }
 
 h2 a:hover{
@@ -51,16 +51,21 @@ h2 a:hover{
 }
 
 h3{
-	font-size: 50px;
+	font-size: 25px;
 }
 
 p.contents {
 	margin-bottom: 0px;
-	font-size: 35px;
+	font-size: 18px;
 }
 
 p.top_contents{
-	margin-top: 50px;
+	margin-top: 25px;
 	width: 90%;
-	font-size: 45px;
+	font-size: 23px;
+}
+
+footer {
+    float: left;
+    margin-top: 50px;
 }

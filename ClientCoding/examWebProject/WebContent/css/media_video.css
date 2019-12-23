@@ -1,1 +1,36 @@
 @charset "UTF-8";
+
+h2.introTitle {
+	font-size: 40px;
+}
+
+section>div#videoBox {
+	float: left;
+	width: 90%;
+	height: auto;
+	margin: 0px 5% 50px 5%;
+}
+
+section>div#videoBox > .videoFrame{
+	width: 100%;
+	margin: 25px 0px;
+}
+
+div#button{
+	text-align: center;
+	margin-top: 50px;
+}
+
+div#button img{
+	border: 3px solid #101010;
+	border-radius: 20px;
+	box-shadow: 2px 2px 5px rgb(0, 0, 0);
+}
+
+div#button img:active{
+	box-shadow: -2px -2px 5px rgb(0, 0, 0);
+}
+
+footer{
+	float: left;
+}

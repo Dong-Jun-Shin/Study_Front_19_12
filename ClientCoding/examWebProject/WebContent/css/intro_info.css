@@ -3,16 +3,16 @@
 section>div {
 	width: 50%;
 	height: auto;
-	margin: 50px auto 100px auto;
+	margin: 25px auto 50px auto;
 }
 
 div#infoBox, div#ratingsBox {
 	float: left;
-	padding: 0px 100px;
+	padding: 0px 50px;
 }
 
 div#img {
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 
 div#img>img {
@@ -21,11 +21,11 @@ div#img>img {
 }
 
 h2.introTitle {
-	font-size: 80px;
+	font-size: 40px;
 }
 
 div.table table, div.table th, div.table td {
-	border: 3px solid #101010;
+	border: 2px solid #101010;
 	border-collapse: collapse;
 }
 
@@ -41,25 +41,23 @@ div.table th{
 }
 
 div#infoBox {
-	margin-top: 95px;
+	margin-top: 48px;
 }
 
 div#infoBox>div.table {
-	font-size: 50px;
+	font-size: 25px;
 }
 
 div#infoBox>div.table th {
-	padding: 10px;
+	padding: 5px;
 }
 
 div#ratingsBox>div.table {
-	font-size: 40px;
+	font-size: 20px;
 }
 
-
-
 div#ratingsBox>div.table tbody td{
-	padding: 10px 0px;
+	padding: 5px 0px;
 }
 
 div#ratingsBox tr.lowRating td.blue {
