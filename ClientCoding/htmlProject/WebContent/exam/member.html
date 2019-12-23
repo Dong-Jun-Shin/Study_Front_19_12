@@ -22,6 +22,13 @@
 				width: 500px
 			}
 		</style>
+		
+		<script type="text/javascript">
+			function certification1(){
+				var certification = Math.floor(Math.random() * 100000);
+				document.getElementById("certification").value = certification;
+			}
+		</script>
 	</head>
 	<body>
 		<fieldset>
@@ -53,16 +60,15 @@
 					<option value="+77">+77</option>
 				</select>				
 				<input type="text" required="required"/>
-				<input type="button" value="인증" />
+				<input type="button" value="인증" onclick="certification1()"/>
 				<br />
 				
-				<input type="text" placeholder="인증번호" required="required" />
+				<input type="text" placeholder="인증번호" required="required" id="certification" />
 				<input type="button" value="확인" />
 				<br />
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<input name="btn" type="submit" value="전송" />
 				<input name="bntn" type="reset" value="취소" />
-				
 			</form>
 		</fieldset>
 	</body>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>Date</title>
+		
+		<link rel="shortcut icon" href="../image/icon.png" />
+		<link rel="apple-touch-icon" href="../image/icon.png" />
+		
+		<script type="text/javascript">
+			// Date 객체의 생성
+			var mydate = new Date();
+			
+			// 년, 월, 일. 시간, 분, 초를 리턴받기
+			var yy = mydate.getFullYear();
+			var mm = mydate.getMonth() + 1;
+			// mydate.setDate(1);
+			var dd = mydate.getDate();
+			
+			// 요일의 이름을 저장하고 있는 배열의 생성
+			var days = ["일", "월", "화", "수", "목", "금", "토"];
+			// 0=일요일 ~ 6=토요일의 값이 리턴된다.
+			var i = mydate.getDay();
+			var day = days[i];
+			
+			var hh = mydate.getHours();
+			var mi = mydate.getMinutes();
+			var ss = mydate.getSeconds();
+			
+			var result1 = yy + "-" + mm + "-" + dd + " " + day + "요일" + hh + ":" + mi + ":" + ss + "<br />";
+			var result2 = "오늘은 " + yy + "년 " + mm + "월" + dd + "일" + day + "요일 입니다.<br />";
+			
+			document.writeln(result1);
+			document.writeln(result2);
+			
+			// toXXXString() 함수는 데이트 형식을 다양하게 보여준다.
+			// 요일 월 일 년
+			document.write("<h1>" + mydate.toDateString() + "</h1> - toDateString");
+			// 시:분:초 GMT+0900(한국 표준시)
+			document.write("<h1>" + mydate.toTimeString() + "</h1> - toTimeString");
+			// 요일 월 일 년 시:분:초 GMT+0900(한국 표준시)
+			document.write("<h1>" + mydate.toString() + "</h1> - toString");
+			
+			// 년. 월. 일.
+			document.write("<h1>" + mydate.toLocaleDateString() + "</h1> - toLocaleDateString");
+			// 오전/오후 시:분:초
+			document.write("<h1>" + mydate.toLocaleTimeString() + "</h1> - toLocaleTimeString");
+			// 년. 월. 일. 오전/오후 시:분:초
+			document.write("<h1>" + mydate.toLocaleString() + "</h1> - toLocaleString");
+			
+			// 년-월-일T시:분:초.밀리초Z (ISO와 JSON은 타입이 다름 - 활용 때 영향)
+			document.write("<h1>" + mydate.toISOString() + "</h1> - toISOString");
+			// 년-월-일T시:분:초.밀리초Z (ISO와 JSON은 타입이 다름 - 활용 때 영향)
+			document.write("<h1>" + mydate.toJSON() + "</h1> - toJSON");
+			// 요일, 일 월 년 시:분:초 GMT 
+			document.write("<h1>" + mydate.toUTCString() + "</h1> - toUTCString");
+			
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>교환 체크</title>
+		
+		<link rel="shortcut icon" href="../image/icon.png" />
+		<link rel="apple-touch-icon" href="../image/icon.png" />
+		
+		<script type="text/javascript">
+			function check(){
+				var s = document.getElementById("pdate").value;
+				var pdate = new Date(s);
+				var today = new Date();
+				var diff = today.getTime() - pdate.getTime();
+				var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+				
+				console.log(s);
+				console.log(pdate);
+				console.log(today);
+				console.log(diff);
+				console.log(days);
+				
+				document.getElementById("result").innerHTML = "교환 가능합니다.";
+				if(days > 7){
+					document.getElementById("result").innerHTML = "교환 기간이 지났습니다.";
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<form action="" method="get">
+			<label>구입날짜: </label>
+			<input type="date" value="2019-01-01" name="pdate" id="pdate"/>
+			<input type="button" value="검사" onclick="check()">
+		</form>
+		<p id="result"></p>
+	</body>
+</html>

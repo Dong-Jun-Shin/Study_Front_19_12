@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>Insert title here</title>
+		
+		<link rel="shortcut icon" href="../image/icon.png" />
+		<link rel="apple-touch-icon" href="../image/icon.png" />
+		<script type="text/javascript">
+			function load(){
+				var certification = '';
+				
+				for (var i = 0; i < 5; i++) {
+					certification += Math.floor(Math.random()*10);
+				}
+				
+				document.getElementById("random").innerHTML = Math.floor(Math.random()*10);
+				document.getElementById("certification").innerHTML = certification;
+			}
+		</script>
+	</head>
+	<body onload="load()">
+		<h2>0~9 사이의 난수: <label id="random"></label></h2>
+		<h2>인증번호: <label id="certification"></label></h2>
+	</body>
+</html>

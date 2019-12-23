@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>prototype</title>
+		
+		<link rel="shortcut icon" href="../image/icon.png" />
+		<link rel="apple-touch-icon" href="../image/icon.png" />
+		<script type="text/javascript">
+			function Point(xpos, ypos){
+				this.x = xpos;
+				this.y = ypos;
+			}
+			
+			Point.prototype.getDistance = function(){
+				return Math.sqrt(this.x * this.x + this.y * this.y);
+			}
+			
+			var p1 = new Point(10, 20);
+			var d1 = p1.getDistance();
+			console.log(p1);
+			
+			var p2 = new Point(10, 30);
+			var d2 = p2.getDistance();
+			
+			document.writeln(d1 + "<br />");
+			document.writeln(d2 + "<br />");
+			
+			function Circle(radius){
+				this.radius = radius;	//원의 반지름
+			}
+			
+			// 원의 넓이를 구하는 메서드
+			Circle.prototype.getArea = function(){
+				return Math.PI * this.radius * this.radius;
+			}
+			
+			var c1 = new Circle(5);
+			document.write("원의 넓이: " + c1.getArea() + "<br />");
+			
+			function Car(model, speed, color){
+				this.model = model;
+				this.speed = speed;
+			}
+		</script>
+	</head>
+	<body>
+	
+	</body>
+</html>
