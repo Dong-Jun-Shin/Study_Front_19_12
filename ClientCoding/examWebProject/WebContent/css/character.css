@@ -24,8 +24,16 @@ article.main-articles{
 	margin: 50px;
 }
 
+.main-articles figure > img#character_img{
+	border-radius: 25px;
+}
+
 h2{
 	font-size: 80px;
+}
+
+area{
+	cursor: pointer;
 }
 
 p.contents {

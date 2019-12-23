@@ -1,1 +1,66 @@
 @charset "UTF-8";
+
+article.articles{
+	clear: both;
+	width: 100%;
+	height: 600px;	
+}
+
+article.main{
+	height: 550px;	
+}
+
+hgroup{
+	margin-top: 40px;
+}
+
+hgroup a{
+	width: 400px;
+}
+
+.articles figure{
+	float: left;
+	padding: 5px;
+	margin: 10px;
+	border: 1px solid #eeeeee;
+}
+
+.articles figure > img.cover{
+	width: 500px;
+	margin-top: 30px;
+	border-radius: 10px;
+}
+
+.articles figcaption{
+	font-size: 90%;
+	text-align: left;	
+}
+
+h2{
+	font-size: 80px;
+}
+
+h2 label{
+	font-size: 50px;
+	font-weight: 10px;
+}
+
+h2 a:hover{
+	color: #7C3A00;
+	cursor: pointer;
+}
+
+h3{
+	font-size: 50px;
+}
+
+p.contents {
+	margin-bottom: 0px;
+	font-size: 35px;
+}
+
+p.top_contents{
+	margin-top: 50px;
+	width: 90%;
+	font-size: 45px;
+}

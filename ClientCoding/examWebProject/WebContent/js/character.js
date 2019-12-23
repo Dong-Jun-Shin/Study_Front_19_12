@@ -1,3 +1,31 @@
+var coords = [
+	'396,544,854,986',
+	'984,422,1148,574',
+	'1070,634,1222,776',
+	'1074,846,1208,990',
+	'576,208,718,352',
+	'892,224,1004,332',
+	'1302,416,1406,510',
+	'1348,546,1452,648',
+	'1228,282,1328,386',
+	'1134,168,1230,268',	
+	'384,1212,536,1352',
+	'624,1262,734,1368',
+	'98,946,236,1088',
+	'926,1094,1060,1228',
+	'188,358,336,492',
+	'94,544,196,650'
+	];
+
+function setArea(){
+	var coordsCode = "";
+	for (var i = 0; i < coords.length; i++) {
+		coordsCode += "<area shape='rect' coords='" + coords[i] + "' alt='person_img' onclick='showPerson(" + i + ")'>";	
+	}
+
+	document.getElementById('rel_map').innerHTML = coordsCode; 
+}
+
 var img = [
 	'main_person_1.jpg', 'm1_sub_1.jpg', 'm1_sub_2.jpg', 'm1_sub_3.jpg', 'm1_sub_4.jpg', 'm1_sub_5.jpg', 
 	'm1_sub_6.jpg', 'm1_sub_7.jpg', 'm1_sub_8.jpg', 'm1_sub_9.jpg', 'main_person_2.jpg', 
@@ -26,11 +54,18 @@ var p = [
 	'30대 초중반. 송태하와 동문수학해 나란히 무과에 합격하고 함께 훈련원에 들어갔으나, 늘 태하의 그늘에 가려 2인자로 만족해야 했다.  소현세자가 용골대와의 일기토를 벌일 대상으로 자신 대신 송태하를 지명하고 청에서 생활할 때의 보디가드 또한 송태하를 지명하송태하가 청군 진영을 향해 돌진할 때, 철웅은 그를 따르지 않았다. ',
 	'50대 후반. 보통 입직 30년이 지나야 정승 자리에 오르는 게 보통인데, 그는 채 20년이 걸리지 않았다. 그는 중용의 도를 표방하면서 붕당정치 어느 곳에도 기울지 않았는데, 기실 어느 파의 누가 되기보다는 스스로 정계의 일가를 이루고 싶은 마음이 더 컸다.'
 ];
-
 function showPerson(input){
-	document.getElementById("main_articles").style.visibility = "visible";
+	var bgColor = '';
+	if(input > 13) bgColor = '#553168';
+	else if(input > 12) bgColor = '#CFA725';
+	else if(input > 11) bgColor = '#3F7C36';
+	else if(input > 9) bgColor = '#D5387E';
+	else if(input >= 0) bgColor = '#36596E';
+	
+	document.getElementById("main_articles").style.visibility = 'visible';
+	document.getElementById("main_articles").style.background = bgColor;
 	document.getElementById("character_img").src = '../image/person/' + img[input];
 	document.getElementById("character_img").alt = img[input];
-	document.getElementById('character_head').innerHTML = head[input];
-	document.getElementById('character_p').innerHTML = p[input];
+	document.getElementById("character_head").innerHTML = head[input];
+	document.getElementById("character_p").innerHTML = p[input];
 }

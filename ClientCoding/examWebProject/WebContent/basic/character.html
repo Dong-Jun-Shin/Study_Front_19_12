@@ -21,7 +21,7 @@
 		<!-- 자바스크립트 -->
 		<script type="text/javascript" src="../js/character.js"></script>
 	</head>
-	<body>
+	<body onload="setArea()">
 		<div id="wrap">
 			<header>
 				<img src="../image/logo.png" name="logo" id="logo" />
@@ -59,36 +59,13 @@
 					<label>등장인물</label>
 				</div>
 				<img name="relation" id="relation" src="../image/relation.jpg" alt="relation.jpg" usemap="#rel_map" />
-				<map name="rel_map" id="rel_map">
-					<area shape="rect" coords="396,544,854,986" alt="person_img" href="#" onclick="showPerson(0)">
-					<area shape="rect" coords="984,422,1148,574" alt="person_img" href="#" onclick="showPerson(1)">
-					<area shape="rect" coords="1070,634,1222,776" alt="person_img" href="#" onclick="showPerson(2)">
-					<area shape="rect" coords="1074,846,1208,990" alt="person_img" href="#" onclick="showPerson(3)">
-					<area shape="rect" coords="576,208,718,352" alt="person_img" href="#" onclick="showPerson(4)">
-					<area shape="rect" coords="892,224,1004,332" alt="person_img" href="#" onclick="showPerson(5)">
-					<area shape="rect" coords="1302,416,1406,510" alt="person_img" href="#" onclick="showPerson(6)">
-					<area shape="rect" coords="1348,546,1452,648" alt="person_img" href="#" onclick="showPerson(7)">
-					<area shape="rect" coords="1228,282,1328,386" alt="person_img" href="#" onclick="showPerson(8)">
-					<area shape="rect" coords="1134,168,1230,268" alt="person_img" href="#" onclick="showPerson(9)">
-					<area shape="rect" coords="384,1212,536,1352" alt="person_img" href="#" onclick="showPerson(10)">
-					<area shape="rect" coords="624,1262,734,1368" alt="person_img" href="#" onclick="showPerson(11)">
-					<area shape="rect" coords="98,946,236,1088" alt="person_img" href="#" onclick="showPerson(12)">
-					<area shape="rect" coords="926,1094,1060,1228" alt="person_img" href="#" onclick="showPerson(13)">
-					<area shape="rect" coords="188,358,336,492" alt="person_img" href="#" onclick="showPerson(14)">
-					<area shape="rect" coords="94,544,196,650" alt="person_img" href="#" onclick="showPerson(15)">
-				</map>
+				<map name="rel_map" id="rel_map"></map>
 				<article class="main-articles" id="main_articles">
 					<figure>
-						<img name="character_img" id="character_img" width="290" height="auto" src="../image/person/main_person_1.jpg" alt="main_person_1" >
+						<img name="character_img" id="character_img" width="290" height="auto" src="" alt="" >
 					</figure>
-					<h2 id="character_head">이대길</h2>
-					<p class="contents" id="character_p" >
-						추노의 메인 주인공. 도망친 노비를 추적해 잡아오는 무자비한 현상금 사냥꾼. 저잣거리엔 부모 제삿날에도 기생끼고 
-						노는 금수같은 새끼라는 평판이 자자하다. 도망친 노비에 대해 집착하는 이유는 내거 노비였던 큰놈이와 큰놈이의 여동생인 
-						언년이 때문에 양친이 죽고 집안이 망했기 때문이다. 성격이 개차반이고 돈을 밝히는 수전노로 유명하며 실제로 추노를 하여 
-						번돈을 같은 추노패인 최장군과 왕손이를 속이며 착복하고 있다. 꼭 그들뿐만은 아니고 위조된 호패를 쓰는 사람들을 잡아서 
-						주머니를 터는 듯 하다.
-					</p>
+					<h2 id="character_head"></h2>
+					<p class="contents" id="character_p" ></p>
 				</article>
 			</section>
 			
