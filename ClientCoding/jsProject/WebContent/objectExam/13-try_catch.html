@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>try_catch</title>
+		
+		<link rel="shortcut icon" href="../image/icon.png" />
+		<link rel="apple-touch-icon" href="../image/icon.png" />
+		
+		<script type="text/javascript">
+			var msg="";
+			function test(){
+				try {
+					allert("Hello World!");
+				} catch (e) {
+					msg = "다음과 같은 오류가 발생하였음: " + e.message;
+					alert(msg);
+				}
+			}
+			
+			var solution= 53;
+			function test(){
+				try{
+					var x = document.getElementById("number").value;
+					if(x == "") throw "입력 없음";
+					if(isNaN(x)) throw "숫자가 아님";
+					if(x > solution) throw "너무 큼";
+					if(x > solution) throw "너무 작음";
+					if(x == solution) throw "성공";
+				}catch (e) {
+					var y = document.getElementById("message");
+					y.innerHTML = "힌트: " + e;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<h2>try ~ catch 예외처리</h2>
+		<input type="button" value="try-catch 시험" onclick="test()" />
+		
+		<h2>Number Guess</h2>
+		<p>1부터 100 사이의 숫자를 입력하시오.</p>
+		<input id="number" type="text" />
+		<button type="button" onclick="test()">숫자 추측</button>
+		<p id="message"></p>
+	</body>
+</html>
