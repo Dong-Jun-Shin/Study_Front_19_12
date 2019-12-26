@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>image 문제 풀기</title>
+		
+		<link rel="shortcut icon" href="../image/icon.png" />
+		<link rel="apple-touch-icon" href="../image/icon.png" />
+		
+		<style type="text/css">
+			.box1{
+				float: left;
+				width: 850px;
+			}
+			
+			.box2{
+				float: left;
+				width: 170px;
+				padding: 0px 10px;
+			}
+			
+			.head{
+				float: left;
+			}
+			
+			.img{
+				width: 150px;
+				height: 190px;
+				margin-bottom: 10px;
+			}
+			
+			.selImg1{
+				float:left;
+				width: 600px;
+				height: 600px;
+			}
+		</style> 
+		<script type="text/javascript">
+			var selectImg;	
+			function selectImg(num){
+				document.getElementById('selImg1').src = "../image/photo"+num+".jpg";
+				console.log("../image/photo"+num+".jpg");
+			}
+			
+			selectImg
+			selectImg(23456)
+			
+			
+			var index = 0;
+			function changeImg(){
+				if(index < 3) 
+					index++; 
+				else 
+					index = 0;
+				
+				document.getElementById('selImg2').src = "../image/photo"+(index+4)+".jpg";
+			}
+			
+			function setImg(){
+				setInterval(changeImg, 1000);
+			}
+			
+		</script>
+	</head>
+	<body onload="setImg()">
+		<div class="box1">
+			<div class="box2">
+				<img class="img" src="../image/photo5.jpg" onclick="selectImg('5')"/>
+				<img class="img" src="../image/photo6.jpg" onclick="selectImg('6')"/>
+				<img class="img" src="../image/photo7.jpg" onclick="selectImg('7')"/>
+			</div>
+			<img class="selImg1" id="selImg1">
+			<div class="box1">
+				<h1 id="head">1초 간격으로 새로운 이미지 보여주기</h1>
+				<img class="selImg2" id="selImg2">
+			</div>
+		</div>
+	</body>
+</html>
