@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>Insert title here</title>
+		
+		<link rel="shortcut icon" href="../image/icon.png" />
+		<link rel="apple-touch-icon" href="../image/icon.png" />
+		
+		<script type="text/javascript">
+			function maxopen(url, winattributes){
+				// 새로운 창을 하나 켜고, maxwindow에 관련 정보를 가진 객체를 담는다.
+				var maxwindow = window.open(url, "", winattributes)
+				
+				// 새로운 창을 0, 0으로 이동
+				//maxwindow.moveTo(0, 0);
+				
+				// 새로운 창을 가운데로 이동
+				maxwindow.moveTo(screen.availWidth * (1/4), screen.availHeight * (1/4));
+				
+				// 새로운 창의 크기를 모니터 가로크기와 세로크기만큼 가져오기
+				maxwindow.resizeTo(screen.availWidth/2, screen.availHeight/2)
+			}
+		</script>
+	</head>
+	<body>
+		<a href="#" onclick="maxopen('http://www.google.com', 'resize=1, scrollbars=1, status=1'); return false;">전체 화면 보기</a>
+	</body>
+</html>

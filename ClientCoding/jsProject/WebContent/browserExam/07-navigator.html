@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>Insert title here</title>
+		
+		<link rel="shortcut icon" href="../image/icon.png" />
+		<link rel="apple-touch-icon" href="../image/icon.png" />
+		
+		<script type="text/javascript">
+			for ( var key in navigator) {
+				value = navigator[key];
+				if(key == "userAgent"){
+					value = "<h2>"+navigator[key]+"</h2>";
+				}
+				document.write(key + ": " + value + "<br /><br />");
+			}
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>

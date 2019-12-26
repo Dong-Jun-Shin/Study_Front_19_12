@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>Insert title here</title>
+		
+		<link rel="shortcut icon" href="../image/icon.png" />
+		<link rel="apple-touch-icon" href="../image/icon.png" />
+		
+		<script type="text/javascript">
+			function open1(){
+				// 새 창(혹은 탭) 띄우기
+				window.open('01-open.html');
+			}
+			
+			function open2(){
+				// 클릭할 때마다 창이 새로 열리는 팝업창 (많이 사용)
+				window.open('01-open.html', '', 'width=500, height=430 scrollbars=no, toolbar=no, menubar=no, status=no, location=no');
+			}
+			
+			function open3(url){
+				// 팝업의 주소를 파라미터로 전달받는다.
+				// 자신이 만든 페이지가 아니면 속성이 적용되지 않을 수 있다.
+				var obj = window.open(url, 'mywin', 'width=800, height=500, scrollbars=no, toolbar=no, menubar=no, status=no, location=no');
+				return obj;
+			}
+			var win;
+			function open_window(){
+				var url = prompt("원하는 URL주소를 입력하시오.);");
+				if(url!=""){
+					win = open3(url);
+				}
+			}
+		</script>
+	</head>
+	<body onload="open2()">
+		<h1>window 객체</h1>
+		<h3>open 메소드 확인</h3>
+		<div>
+			<a href="#" onclick="open1()">새 창 열기</a>
+			<br />
+			<a href="#" onclick="open2()">팝업 창 열기(1)</a>
+			<br />
+			<!-- 파라미터를 포함한 함수의 호출 -->
+			<a href="#" onclick="open3('http://www.naver.com')">팝업 창 열기(2-1)</a>
+			<br />
+			<a href="#" onclick="open3('http://www.daum.net')">팝업 창 열기(2-2)</a>
+			<br />
+			
+			<button type="button" onclick="open_window()">
+			Open a page with new window</button>
+			<button type="button" onclick="win.close()">Close the window</button>
+		</div>
+	</body>
+</html>
