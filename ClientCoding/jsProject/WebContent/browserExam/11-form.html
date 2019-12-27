@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>form 객체</title>
+		
+		<link rel="shortcut icon" href="../image/icon.png" />
+		<link rel="apple-touch-icon" href="../image/icon.png" />
+		
+		<style type="text/css">
+			fieldset {
+				width: 450px;
+			}
+			
+			div.box{
+				width: 450px;
+				height: 50px;
+				line-height: 50px;
+				border-bottom: 1px solid lightgray;
+			}
+			
+			label{
+				display: inline-block;
+				width: 80px;
+			}
+			
+			div.button{
+				text-align: center;
+				border-bottom: none;
+			}
+		</style>
+		<script type="text/javascript">
+			function checkNotEmpty(field){
+				if(field.value.length == 0){
+					alert("필드가 비어있네요!");			
+					field.focus();
+				}				
+			}
+			
+			function doSubmit(){
+				// 바디 객체
+				var frm = document.myForm;
+				
+				/*
+				// text 요소의 입력여부 검사 (빈칸 검증)
+				if(frm.user_name.value == ""){
+					alert("이름을 입력해 주세요.");
+					frm.name.value="";
+					frm.name.focus();
+					return false;
+				}
+				*/
+				
+				// text 요소의 입력여부 검사 (공백 문자까지 검증)
+				if(frm.user_name.value.replace(/\s/g, "") == ""){
+					alert("이름을 입력해주세요.");
+					frm.user_name.value="";
+					frm.user_name.focus();
+					return false;
+				}
+				
+				// 라디오 버튼의 입력여부 검사. (radio - checked)
+				if(!frm.gender[0].checked && !frm.gender[1].checked){
+					alert("성별을 선택해주세요.");
+					frm.gender[0].focus();
+					return false;
+				}
+				
+				// select 요소에 대한 선택위치 검사 (select - selectedIndex)
+				if (frm.job.selectedIndex < 1){
+					alert("직업을 선택해주세요.");
+					frm.job.focus();
+					return false;
+				}
+				
+				// 체크박스의 선택여부 검사 (checkBox - for, name[i].checked)
+				var chk = false;
+				for (var i = 0; i < frm.hobby.length; i++) {
+					if(frm.hobby[i].checked){
+						chk = true;
+						break;
+					}
+				}
+				
+				if(!chk){
+					alert("취미를 선택해주세요.")
+					frm.hobby[0].focus();
+					return false;
+				}
+
+				var contents = inputData1(frm);
+				//var contents = inputData2(frm);
+				var footer = "\n\n입력하신 내용이 맞습니까? \n [취소]를 누르면 모든 데이터가 사라집니다.";
+				var answer = confirm(contents + footer);
+				if(answer){
+					alert("전송 완료");	
+				}else{
+					alert("전송 취소");
+				}
+				
+				return true;
+			}
+			
+			function inputData1(form){
+				var result = "▶ 이름 : " + form.user_name.value;
+				var sex;
+				for (var i = 0; i < form.gender.length; i++) {
+					if(form.gender[i].checked){
+						sex = form.gender[i].value;
+					}
+				}
+				
+				result += "\n▶ 성별 : " + sex;
+				
+				/*
+				// select 요소의 값 가져오는 방법 3가지
+				result += "\n▶ 직업 : " + form.job.value;
+				result += "\n▶ 직업 : " + form.job[form.job.selectedIndex].value; 
+				result += "\n▶ 직업 : " + form.job.options[form.job.selectedIndex].value; 
+				*/
+				result += "\n▶ 직업 : " + form.job[form.job.selectedIndex].value;
+				
+				var hby = "";
+				for (var i = 0; i < form.hobby.length; i++) {
+					if(form.hobby[i].checked){
+						hby += form.hobby[i].value + " ";
+					}
+				}
+				result += "\n▶ 취미 : " + hby;
+				
+				return result;
+			}
+			
+			function inputData2(form){
+				var hobby = "";
+				for (var i = 0; i < form.hobby.length; i++) {
+					if(form.hobby[i].checked){
+						hobby += form.hobby[i].value + " ";
+					}
+				}
+				
+				var info = [];
+				info["이름"] = form.user_name.value;
+				info["성별"] = form.gender.value;
+				info["직업"] = form.job.value;
+				info["취미"] = hobby;
+				
+				var contents = "";
+				for (var key in info){
+					contents += "▶ " + key + " : " + info[key] + "\n";
+				}
+				
+				return contents;
+			}
+		</script>
+	</head>
+	<body>
+		<fieldset>
+			<legend>회원가입</legend>
+			<form action="" method="get" name="myForm" id="myForm" onsubmit="return doSubmit();">
+				<div class="box">
+					<label>이름</label>
+					<input type="text" name="user_name" id="user_name">
+				</div>
+				<div class="box">
+					<label>성별</label>
+					<span><input type="radio" value="남자" name="gender" id="male">남자</span>
+					<span><input type="radio" value="여자" name="gender" id="female">여자</span>
+				</div>
+				<div class="box">
+					<label>직업</label>
+					<select size="1" name="job" id="job">
+						<option>----선택하세요----</option>
+						<option value="프로그래머">프로그래머</option>
+						<option value="퍼블리셔">퍼블리셔</option>
+						<option value="직업3">직업3</option>
+						<option value="직업4">직업4</option>
+						<option value="직업5">직업5</option>
+					</select>
+				</div>
+				<div class="box">
+					<label>취미</label>
+					<span><input type="checkbox" value="걷기" name="hobby" id="work">걷기</span>
+					<span><input type="checkbox" value="축구" name="hobby" id="soccer">축구</span>
+					<span><input type="checkbox" value="농구" name="hobby" id="basketBall">농구</span>
+					<span><input type="checkbox" value="야구" name="hobby" id="baseBall">야구</span>
+					<span><input type="checkbox" value="여행" name="hobby" id="travel">여행</span>
+					<span><input type="checkbox" value="영화" name="hobby" id="movie">영화</span>
+				</div>
+				<div class="button box">
+					<span>
+						<input type="submit" value="가입">
+						<input type="reset" value="초기화">
+					</span>
+				</div>
+			</form>
+		</fieldset>		
+	</body>
+</html>
