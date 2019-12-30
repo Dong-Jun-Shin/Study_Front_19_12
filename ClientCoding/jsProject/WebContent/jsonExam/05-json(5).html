@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>예제</title>
+		
+		<link rel="shortcut icon" href="../image/icon.png" />
+		<link rel="apple-touch-icon" href="../image/icon.png" />
+		
+		<style type="text/css">
+			table{
+				width: 600px;
+				border: 3px solid black;
+				border-collapse: collapse;
+			}
+			
+			table caption{
+				text-align: right;
+			}
+			
+			th, td{
+				border: 1px solid black;
+				text-align: center;
+			}
+
+			td:nth-child(2){
+				text-align: left;
+			}
+		</style>
+		
+		<script type="text/javascript">
+			/*
+			var bulletinBoard = {
+				"no" : [1, 2, 3, "공지"],
+				"title" : ["클라이언트 프로그래밍"],
+				"lesson" : ["Javascript", "jQuery", "Ajax"],
+				"hits" : [19, 15, 6, 3],
+				"date" : ["2017.06.05", "2017.11.07", "2018.04.08", "2017.01.29"]
+			}
+			
+			function init(){
+				document.getElementById("title").innerHTML = bulletinBoard.title[0] + " / " + bulletinBoard.title[1] + " / " + bulletinBoard.title[2];
+				document.getElementById("description").innerHTML = "클라이언트 프로그래밍 과목을 정리해 놓은 게시판입니다.";
+				document.getElementById("caption").innerHTML += bulletinBoard.num.length + "개";
+
+				var body = "";
+				for (var i = bulletinBoard.num.length - 1; i >= 0; i--) {
+					body += "<tr>";
+					body += "<td>" + bulletinBoard.no[i] + "</td>";
+					body += "<td>" + bulletinBoard.title[i] + "</td>";
+					body += "<td>" + bulletinBoard.hits[i] + "</td>";
+					body += "<td>" + bulletinBoard.date[i] + "</td>";
+					body += "</tr>";
+				}
+				
+				document.getElementById("bulletinBoard").innerHTML += body; 
+			}
+			*/
+			
+			var bbs = {
+					"title" : "Javascript / jQuery / Ajax ",
+					"description" : "클라이언트 프로그래밍 과목을 정리해 놓은 게시판입니다.",
+					"total" : 4,
+					"item" : [
+						{"no" : "공지", "subject" : "클라이언트 프로그래밍", "hit" : 3, "date": "2017.01.29"},
+						{"no" : 3, "subject" : "Ajax", "hit" : 6, "date": "2018.04.08"},
+						{"no" : 2, "subject" : "jQuery", "hit" : 15, "date": "2017.11.07"},
+						{"no" : 1, "subject" : "Javascript", "hit" : 19, "date": "2017.06.05"}
+					]
+			};
+			
+			function init(){
+				document.getElementById("title").innerHTML = bbs.title;
+				document.getElementById("description").innerHTML = bbs.description;
+				
+				// bbs안의 각 독립된 값들에 대한  출력 HTML 생성
+				document.getElementById("caption").innerHTML += bbs.total + "개";
+				
+				// 배열로 표현되는 게시물 정보에 대한 출력 HTML 생성
+				var body = "";
+				for (var i = 0; i < bbs.item.length; i++) {
+					var item = bbs.item[i];
+					body += "<tr>";
+					body += "<td>" + item.no + "</td>";
+					body += "<td>" + item.subject + "</td>";
+					body += "<td>" + item.hit + "</td>";
+					body += "<td>" + item.date + "</td>";
+					body += "</tr>";
+				}
+				
+				document.getElementById("bulletinBoard").innerHTML += body; 
+			}
+		</script>
+	</head>
+	<body onload="init()">
+		<h1 id="title"></h1>
+		<p id="description"></p>
+		<table id="bulletinBoard">
+			<caption id="caption">총 게시물의 수 : </caption>
+			<tr>
+				<th>번호</th>
+				<th>제목</th>
+				<th>조회수</th>
+				<th>등록일</th>
+			</tr>
+		</table>
+	</body>
+</html>

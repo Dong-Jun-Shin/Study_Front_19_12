@@ -5,7 +5,7 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
-		<title>Insert title here</title>
+		<title>서적 주문 합계</title>
 		
 		<link rel="shortcut icon" href="../image/icon.png" />
 		<link rel="apple-touch-icon" href="../image/icon.png" />
@@ -42,6 +42,7 @@
 				
 				// 수량
 				var qty =[form.qty_1.value, form.qty_2.value, form.qty_3.value];
+				
 				// 개별 합계
 				var price = [form.price_1, form.price_2, form.price_3];
 				
@@ -65,8 +66,8 @@
 			
 			function parsePrice(unitPrice){
 				for (var i = 0; i < unitPrice.length; i++) {
-					// unitPrice[i] = document.getElementById(unitPrice[i]).innerHTML.replace(",", "").replace("원", "");
 					// 숫자 제외한 나머지는 모두 빈문자로 만든다.
+					// unitPrice[i] = document.getElementById(unitPrice[i]).innerHTML.replace(",", "").replace("원", "");
 					unitPrice[i] = document.getElementById(unitPrice[i]).innerHTML.replace(/[^\d]+/g, "");
 				}
 				
@@ -91,26 +92,27 @@
 					<tr>
 						<td>멀티미디어 배움터 2.0</td>
 						<td><label id="unitPrice_1">25,000원</label></td>
-						<td><input type="number" value="0" name="qty_1" min="0" /></td>
+						<!-- this.select() 함수가 실행되면 해당 객체의 값에 포커스가 잡히는 메소드 -->
+						<td><input type="number" value="0" name="qty_1" min="0" onclick="this.select();" onblur="calculate()"/></td>
 						<td><input type="number" value="0" name="price_1" readonly="readonly" />원</td>
-					</tr>			
+					</tr>
 					<tr>
 						<td>모바일 멀티미디어</td>
 						<td><label id="unitPrice_2">27,000원</label></td>
-						<td><input type="number" value="0" name="qty_2" min="0"/></td>
+						<td><input type="number" value="0" name="qty_2" min="0" onclick="this.select();" onblur="calculate()"/></td>
 						<td><input type="number" value="0" name="price_2" readonly="readonly" />원</td>
-					</tr>			
+					</tr>
 					<tr>
 						<td>자바입문: 이론과 실습</td>
 						<td><label id="unitPrice_3">25,000원</label></td>
-						<td><input type="number" value="0" name="qty_3" min="0"/></td>
+						<td><input type="number" value="0" name="qty_3" min="0" onclick="this.select();" onblur="calculate()"/></td>
 						<td><input type="number" value="0" name="price_3" readonly="readonly" />원</td>
-					</tr>			
+					</tr>
 				</tbody>
 				<tfoot>
 					<tr>
 						<td>합&nbsp;&nbsp;&nbsp;&nbsp;계 </td>
-						<td></td>
+						<td>&nbsp;</td>
 						<td><input type="number" value="0" name="totalQty" readonly="readonly" /></td>
 						<td><input type="number" value="0" name="totalPrice" readonly="readonly" />원</td>
 					</tr>

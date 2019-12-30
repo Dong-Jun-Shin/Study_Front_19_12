@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>json 정의</title>
+		
+		<link rel="shortcut icon" href="../image/icon.png" />
+		<link rel="apple-touch-icon" href="../image/icon.png" />
+		
+		<script type="text/javascript">
+			/*	
+			var person = {
+					"name" : "홍길동",
+					"age" : 25,
+					"gender" : "남자",
+					"visual" : "잘 생겼음.",
+					"etc." : "전부 구라"
+			};
+			
+			document.write("<h3>" + person.name + "</h3>");
+			document.write("<h3>" + person.age + "</h3>");
+			document.write("<h3>" + person.gender + "</h3>");
+			document.write("<h3>" + person["visual"] + "</h3>");
+			document.write("<h3>" + person["etc."] + "</h3>");
+			*/
+			
+			function init(){
+				var person = {
+						name : "HongGilDong",
+						age : 25,
+						address : {
+							nation : "Korea",
+							city : "Seoul",
+							postalCode : 12345
+						},
+						hobby : ["영화", "여행"],
+						phone : "010-1234-0987"
+				};
+				
+				var name = "이름 " + person.name;
+				var age = "나이 " + person["age"];
+				var address = "주소 " + person["address"].nation + ", " +
+								person["address"].city + ", " +
+								person["address"].postalCode;
+				var hobby = "취미 " + person.hobby[0] + " " + person.hobby[1];
+				var phone = "번호 " + person.phone;
+				
+				var str =  name + "<br />" + age + "<br />" +
+							address + "<br />" + hobby + "<br />" + 
+							phone + "<br />";
+							
+				//document.write(str);
+				document.getElementById("view").innerHTML = str;
+			}
+		</script>
+	</head>
+	<body onload="init()">
+		<div id="view"></div>
+	</body>
+</html>

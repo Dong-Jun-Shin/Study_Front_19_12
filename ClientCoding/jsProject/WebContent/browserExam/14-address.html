@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>Insert title here</title>
+		
+		<link rel="shortcut icon" href="../image/icon.png" />
+		<link rel="apple-touch-icon" href="../image/icon.png" />
+		
+		<script type="text/javascript">
+			function juso(zip, addr){
+				// 부모 페이지의 요소에 접근하는 방법 (opener 객체는 이 페이지를 띄운 객체를 가리킨다.)
+				opener.document.form1.zipCode.value=zip;
+				opener.document.form1.address.value=addr;
+				self.close();
+			}
+		</script>
+	</head>
+	<body>
+		<!-- javascript 호출을 href에 주는 것과 함수로 주는 방법 (두가지) -->
+		<!-- <a href="#" onclick="juso('04709', '서울시 성동구 무학로2길 54 신방빌딩 4,5층')">04709</a> -->
+		<a href="javascript:juso('04709', '서울시 성동구 무학로2길 54 신방빌딩 4,5층')">04709</a>
+		&nbsp;&nbsp;서울시 성동구 무학로2길 54 신방빌딩 4,5층<br />
+
+		<a href="javascript:juso('13561', '경기도 성남시 분당구 불정로 6 ')">13561</a>
+		&nbsp;&nbsp;경기도 성남시 분당구 불정로 6<br />
+
+		<a href="javascript:juso('03154', '서울 종로구 종로 1 교보생명빌딩')">03154</a>
+		&nbsp;&nbsp;서울 종로구 종로 1 교보생명빌딩<br />
+	</body>
+</html>
