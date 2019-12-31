@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>name으로 요소 찾기</title>
+		
+		<link rel="shortcut icon" href="../image/icon.png" />
+		<link rel="apple-touch-icon" href="../image/icon.png" />
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var btn = document.getElementById("choice");
+				btn.onclick = function(){
+					var size = document.getElementsByName("check").length;
+					var text = "내가 좋아하는 과일은 ";
+					for (var i = 0; i < size; i++) {
+						if(document.getElementsByName("check")[i].checked == true){
+							text += (document.getElementsByName("check")[i].value);
+							text += "&nbsp;&nbsp;";
+						}
+					}
+					text += "입니다.";
+					document.getElementById("area").innerHTML = text;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		좋아하는 과일을 선택하시오.
+		<input type="button" id="choice" value="선택"><br />
+		<input type="checkbox" name="check" value="orange">orange<br />
+		<input type="checkbox" name="check" value="apple">apple<br />
+		<input type="checkbox" name="check" value="banana">banana<br />
+		<input type="checkbox" name="check" value="melon">melon<br />
+		
+		<div id="area"></div>
+	</body>
+</html>

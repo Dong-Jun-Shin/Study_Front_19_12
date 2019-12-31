@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>node 추가, 삭제</title>
+		
+		<link rel="shortcut icon" href="../image/icon.png" />
+		<link rel="apple-touch-icon" href="../image/icon.png" />
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var btnAdd = document.getElementById("addNode");
+				btnAdd.onclick = function(){
+					var element = document.createElement("p");
+					var node = document.createTextNode("동적으로 텍스트를 추가합니다.");
+					element.appendChild(node);
+					document.getElementById("target").appendChild(element);
+				};
+				
+				var btnRemove = document.getElementById("removeNode");
+				btnRemove.onclick = function(){
+					/*
+					// node 삭제 예제
+					var div = document.getElementById("area");
+					var p2 = document.getElementById("p2");
+					div.removeChild(p2);
+					*/
+					
+					// 만든 node 삭제
+					var div = document.getElementById("target");
+					var p = div.getElementsByTagName("p");
+					div.removeChild(p[p.length-1]);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="addNode">동적 노드 추가</div>
+		<div id="removeNode">노드 삭제</div>
+		
+		<div id="target"></div>
+		
+		<div id="area">
+			<p id="p1">첫번째 노드</p>
+			<p id="p2">두번째 노드</p>
+		</div>
+	</body>
+</html>

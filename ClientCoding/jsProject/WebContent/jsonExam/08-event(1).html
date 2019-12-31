@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<title>이벤트 부여</title>
+	
+	<link rel="shortcut icon" href="../image/icon.png" />
+	<link rel="apple-touch-icon" href="../image/icon.png" />
+
+	<script type="text/javascript">
+		//글자색: #0000ff/ 배경색 : "#d5d5d5" / 글자크기: "50px" / 내부여백: "15px"
+		function h1_click() {
+			alert("H1 태그 클릭");
+		}
+		/*
+		function initPage() {
+		   var h1 = document.getElementById("hello");
+		   
+		   h1.style.color = "#0000ff";
+		   h1.style.backgroundColor = "#d5d5d5";
+		   h1.style.fontSize = "50px";
+		   h1.style.padding = "15px";
+		   h1.style.margin = "0";
+		   
+		   //객체의 시작태그와 끝태그 사이에 새로운 내용(혹은 요소)를 포함시킨다.
+		   h1.innerHTML = "Hello Javascript";
+		}
+		 */
+		//onload 이벤트 연결
+		//window.onload = initPage;         
+		//window.onload = function initPage() {
+		window.onload = function() {
+			var h1 = document.getElementById("hello");
+	
+			h1.style.color = "#0000ff";
+			h1.style.backgroundColor = "#d5d5d5";
+			h1.style.fontSize = "50px";
+			h1.style.padding = "15px";
+			h1.style.margin = "0";
+	
+			//객체의 시작태그와 끝태그 사이에 새로운 내용(혹은 요소)를 포함시킨다.
+			h1.innerHTML = "Hello Javascript";
+	
+			/*
+			페이지 이동하는 두가지 방법
+				-태그에서는 <a href="">로 이동
+				-자바스크립트에서는 location.href="" 으로 이동
+			 */
+	
+			/*
+			//onclick으로 이벤트 부여
+			var btn = document.getElementById("confirm");
+			btn.onclick = function(){
+			    location.href = document.getElementById("url").value;
+			    //location.href = document.form1.url.value;
+			}
+			 */
+	
+			/*
+			//addEventListener("이벤트 속성", 함수)로 이벤트 부여
+			var btn = document.getElementById("confirm");
+			btn.addEventListener("click", function(event){
+			    location.href = document.getElementById("url").value;
+			}
+			 */
+	
+			//addEventListener 명령어가 없는 브라우저를 대비한 이벤트 부여 제어
+			var btn = document.getElementById("confirm");
+			if (window.addEventListener) {
+				// for Non IE
+				btn.addEventListener("click", function() {
+					location.href = document.getElementById("url").value;
+				});
+			} else {
+				// for IE
+				btn.attachEvent("click", function() {
+					location.href = document.getElementById("url").value;
+					//location.href = document.form1.url.value;
+				});
+			}
+			
+			//특정 이벤트를 등록하고 해당 함수를 실행한다.
+			var sub = document.getElementById("form2");
+			sub.addEventListener("submit", function(event) {
+				event.preventDefault(); //기본 이벤트 해제
+				address_search();
+			});
+		};	//window.onload 구문의 종료
+		
+		function address_search(){
+			var address=["홍길동", "email:dong1234@gmail.com"];
+			var data = document.getElementById("txt");
+			data.value = "이름 / 주소 \n";
+			data.value += address[0] + "/" + address[1];
+		}
+	</script>
+</head>
+<!-- <body onload="initPage()"> -->
+<body>
+	<h1 id="hello" onclick="h1_click()"></h1>
+
+	<form name="form1">
+		<p>
+			<label>이동할 URL (http://포함)을 입력해 주세요)</label><br /> 
+			<input type="text" name="url" id="url" /> 
+			<input type="button" value="확인" name="confirm" id="confirm" />
+		</p>
+	</form>
+	<form action="" method="get" name="form2" id="form2">
+		<fieldset>
+			<legend>주소록</legend>
+			<textarea rows="10" cols="30" name="txt" id="txt"></textarea><br /> 
+			<input type="submit" id="sub" value="불러오기" />
+		</fieldset>
+	</form>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>TagName으로 요소 찾기</title>
+		
+		<link rel="shortcut icon" href="../image/icon.png" />
+		<link rel="apple-touch-icon" href="../image/icon.png" />
+		
+		<script type="text/javascript">
+			window.onload = function(){
+				var ul = document.getElementsByTagName("ul");
+				
+				var colorBtn = document.getElementById("setColor"); 
+				colorBtn.onclick = function(){
+					// 컬러 반복
+					// 중첩된 태그에 접근하는 방법
+					var li = ul[0].getElementsByTagName("li");
+					var color = ["orange", "white", "skyblue"];
+					for (var i = 0; i < li.length; i++) {
+						var j = i - 1;
+						if(j == -1){
+							j = 2;
+						}
+						
+						li[i].style.backgroundColor = color[i];
+						li[i].style.color = color[j];
+					}
+					
+					/*
+					// 4가지로 순차 컬러 적용
+					var li = ul[0].getElementsByTagName("li");
+					var color = ["green", "orange", "white", "skyblue"];
+					for (var i = 0; i < li.length; i++) {
+						li[i].style.backgroundColor = color[i+1];
+						li[i].style.color = color[i];
+					}
+					*/
+				}
+				
+				var btn = document.getElementById("choice");
+				btn.onclick = function(){
+					var li = ul[1].getElementsByTagName("li");
+					var str = "";
+					for (var i = 0; i < li.length; i++) {
+						str += li[i].innerHTML + "&nbsp;&nbsp;"; 
+					}
+					document.getElementById("area").innerHTML = str;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>first</li>
+			<li>second</li>
+			<li>third</li>
+		</ul>
+		<input type="button" value="click" name="setColor" id="setColor"/>
+
+		<ul>
+			<li>아메리카노</li>
+			<li>카페라떼</li>
+			<li>콜드브르</li>
+		</ul>
+		<input type="button" value="click" name="choice" id="choice"/>
+		<div id="area"></div>
+	</body>
+</html>

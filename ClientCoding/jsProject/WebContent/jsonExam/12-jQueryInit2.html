@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>Insert title here</title>
+		
+		<link rel="shortcut icon" href="../image/icon.png" />
+		<link rel="apple-touch-icon" href="../image/icon.png" />
+		
+		<!-- jQuery Framework 참조하기 -->
+		<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+		
+		<script type="text/javascript">
+	         function initPage() {
+	            var h1 = document.getElementById("hello1");
+	            h1.style.color = "#0000ff";
+	            h1.style.backgroundColor = "#d5d5d5";
+	            h1.style.fontSize = "50px";
+	            h1.style.padding = "15px";
+	            h1.style.margin = "0";
+	            h1.innerHTML = "Hello jQuery";
+	         }
+	         
+	         function sayHello(){
+	        	 alert("안녕하세요. 제이쿼리");
+	         }
+			
+	        // Javascript의 onload 이벤트와 같은 효과입니다.
+	        /*
+	        jQuery(initPage);
+	        jQuery(sayHello);
+	        */
+	        
+	        /*
+	        jQuery(function(){
+	        	sayHello();
+	        	initPage();
+	        });
+	        */
+	        
+	        $(function(){
+				sayHello();
+				initPage();
+				
+				//document.getElementById("hello").innerHTML="집중 좀 하자";
+				// 태그지정자는 실행 순서에 영향을 받는다.
+				//태그
+				$("h1").html("집중 좀 하자")
+				//아이디
+				$("#hello1").html("집중 좀 하자1");
+				//클래스
+				$(".hello").html("집중 좀 하자2");
+				
+				//.css("속성명", "값").css("속성명", "값")... 
+				//"-" 사용가능	ex)font-size
+				$(".hello").css("color", "hotpink");
+				$(".hello").css("background-color", "yellow");
+				
+				//css 한번에 부여
+				$("#hello2").css("color", "green").css("background-color", "skyblue");
+				
+				//html+css 같이 부여
+				$("#hello3").html("집중 좀 하자4").css("font-size", "50px");
+				
+				
+				//css를 json으로 부여하기
+				$("#hello4").css({
+					"color" : "darkblue",
+					"font-size" : "72px",
+					"background-color" : "black",
+					"border" : "10px solid lightgreen"
+				});
+				
+				$("#hello5").html("******").css({
+					
+				})
+				
+				
+				// html("값") = setXXX
+				// html() = getXXX
+		        alert($("#hello5").html());
+	        });
+      </script>
+	</head>
+	<body>
+		<h1></h1>
+		<h1 id="hello1"></h1>
+		<h1 class="hello"></h1>
+		<h1 id="hello2"></h1>
+		<h1 id="hello3"></h1>
+		<h1 id="hello4"></h1>
+		<h1 id="hello5"></h1>
+		<h1 id="hello6"></h1>
+	</body>
+</html>

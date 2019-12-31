@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>jQuery Exam</title>
+		
+		<link rel="shortcut icon" href="../image/icon.png" />
+		<link rel="apple-touch-icon" href="../image/icon.png" />
+		
+		<style type="text/css">
+			div#container{
+				border: 5px solid hotpink;
+				padding: 20px 10px;
+			}
+			
+			h1#title{
+				background-color: lightgray;
+				padding: 20px 10px;
+			}
+			
+			div.box{
+				background-color: yellow;
+				font-size: large;
+				padding: 15px 10px;
+			}
+			
+			ul{
+				border: 5px solid lightgreen;
+				margin-top: 0px; 
+				padding: 10px;				
+			}
+			
+			ul li{
+				list-style: none;
+			}
+			
+			li:nth-child(1), li:nth-last-child(1) {
+				border: 3px dotted red;
+				padding: 5px;
+			}
+			
+			pre{
+				border: 1px solid black;
+				border-radius: 20px;
+				background-color: lightgray;
+				padding: 10px;
+			}
+		</style>
+		
+		<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#title").html("제목입니다.");
+				$(".box").html("안녕하세요.");
+				$("li:nth-child(1)").html("First-Child");
+				$("li:nth-child(2)").html("jQuery 고유의 방식도 있습니다.");
+				$("li:nth-child(3)").html("목록입니다.");
+				$("li:nth-child(4)").html("목록입니다.");
+				$("li:nth-last-child(1)").html("Last-Child");
+				$("p").html("다중요소 선택");
+				$("pre").html("다중요소 선택");
+				$("pre#source").html("css2의 선택자");
+			});
+		</script>
+	</head>
+	<body>
+		<div id="container">
+			<h1 id="title"></h1>
+			<div class="box"></div>
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<p></p>
+		<pre></pre>
+		<pre id="source"></pre>
+	</body>
+</html>
