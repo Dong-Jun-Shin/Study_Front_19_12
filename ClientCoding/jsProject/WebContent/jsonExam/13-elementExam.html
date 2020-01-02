@@ -11,29 +11,27 @@
 		
 		<style type="text/css">
 			div#container{
+				width: auto;
 				border: 5px solid hotpink;
-				padding: 20px 10px;
+				padding: 10px;
 			}
 			
 			h1#title{
-				background-color: lightgray;
-				padding: 20px 10px;
+				background-color: #d5d5d5;
+				padding: 10px;
 			}
 			
 			div.box{
-				background-color: yellow;
-				font-size: large;
-				padding: 15px 10px;
+				background-color: #ffff00;
+				font: 20px '굴림';
+				padding: 10px;
 			}
 			
 			ul{
-				border: 5px solid lightgreen;
-				margin-top: 0px; 
-				padding: 10px;				
-			}
-			
-			ul li{
 				list-style: none;
+				border: 5px solid lightgreen;
+				margin: 0px; 
+				padding: 10px;				
 			}
 			
 			li:nth-child(1), li:nth-last-child(1) {
@@ -42,18 +40,34 @@
 			}
 			
 			pre{
-				border: 1px solid black;
+				font: 14px/130% 'Courier New';
+				background-color: #eee;
+				padding: 10px 20px;
+				margin: 10px auto;
+				border: 1px solid #555;
 				border-radius: 20px;
-				background-color: lightgray;
-				padding: 10px;
 			}
 		</style>
 		
 		<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
 		<script type="text/javascript">
+			//$(function(){}) - onload와 같은 역할. 함수에 정의되어 있는 내용을 페이지 로드시 보여준다.
 			$(function(){
 				$("#title").html("제목입니다.");
+				//$("div#container > #title").html("제목입니다.");
+								
 				$(".box").html("안녕하세요.");
+				//$("div#container div.box").html("안녕하세요.");
+				
+				// 자손선택자로 모든 <li>태그를 지정
+				$("ul > li").html("목록입니다.");
+				// 두 번째 <li>태그만 지정. :eq(n)은 0부터 카운트
+				$("ul > li:eq(1)").html("jQuery 고유의 방식도 있습니다.");
+				// 복수 요소를 지정한다. 그룹 선택자
+				$("p, pre").html("다중요소 선택");
+				// id 속성이 source인 항목만 지정 - 속성 선택자
+				$("pre[id='source']").html("CSS2의 선택자");
+				/*
 				$("li:nth-child(1)").html("First-Child");
 				$("li:nth-child(2)").html("jQuery 고유의 방식도 있습니다.");
 				$("li:nth-child(3)").html("목록입니다.");
@@ -62,6 +76,7 @@
 				$("p").html("다중요소 선택");
 				$("pre").html("다중요소 선택");
 				$("pre#source").html("css2의 선택자");
+				*/
 			});
 		</script>
 	</head>

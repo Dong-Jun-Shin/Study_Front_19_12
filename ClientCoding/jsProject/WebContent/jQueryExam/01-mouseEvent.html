@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>마우스 이벤트 처리</title>
+		<!-- 몇몇 경우르 제외하고, 보통 기존 이벤트명에서 on을 빼고 사용한다. -->
+		
+		<link rel="shortcut icon" href="../image/icon.png" />
+		<link rel="apple-touch-icon" href="../image/icon.png" />
+		
+		<link rel="stylesheet" type="text/css" href="../css/event.css" />
+		
+		<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				/* 커서 위치에 따른 처리
+				// #input 영역에서(커서가 올라갈 때 실행)
+				$('#input').mouseenter(function(){
+					$('#result').html("Mouse Enter Event(onMouseOver)");
+				});
+				
+				// #input 영역에서 (커서가 빠져나갈 때 실행)
+				$('#input').mouseleave(function(){
+					$('#result').html("Mouse Leave Event(onMouseOut)");
+				});
+				
+				
+				// #input 영역에서 (커서가 올라갈 때와 빠져나갈 때를 처리)
+				// .hover(올라갈 때 함수, 빠져나갈 때 함수)
+				$('#input').hover(function(){
+					// 마우스 커서가 올라감
+					$('#result').html("Mouse Enter Event(onMouseOver)");
+				}, function(){
+					// 마우스 커서가 빠져나감
+					$('#result').html("Mouse Leave Event(onMouseOut)");
+				});
+				*/
+				
+				
+				/* 커서의 클릭에 따른 처리
+				// #input 영역을 (누른 순간 실행)
+				$('#input').mousedown(function(){
+					//$('this').css("background-colo","lightgreen");
+					$('#result').html("Mouse Down Event");
+				});
+				
+				// #input 영역을 (눌렀다 떼는 순간 실행)
+				$('#input').mouseup(function(){
+					$('#result').html("Mouse Up Event")
+				});
+				
+				
+				// #input 영역을 클릭(눌렀다 떼는 순간 실행)
+				$('#input').click(function(){
+					$('#result').html("Mouse Click Event(onMouseClick)");
+				})
+				
+				// #input 영역을 더블 클릭(두번째 클릭 후 떼는 순간 실행)
+				$('#input').dblclick(function(){
+					$('#result').html("Double Click Event");
+				})
+				*/
+				
+				$('#image').hover(function(){
+					$('#image').attr("src", "../image/2.jpg");
+				}, function(){
+					$('#image').attr("src", "../image/3.jpg");
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<h1>마우스 이벤트 확인하기</h1>
+		<div id="input">
+			Do it in Here~!!
+		</div>
+		<img id="image" src="../image/1.jpg" alt="1.jpg"/>
+		<h2>결과</h2>
+		<div id="result"></div>
+	</body>
+</html>

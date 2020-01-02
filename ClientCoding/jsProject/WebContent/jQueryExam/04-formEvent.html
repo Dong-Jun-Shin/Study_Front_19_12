@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>Insert title here</title>
+		
+		<link rel="shortcut icon" href="../image/icon.png" />
+		<link rel="apple-touch-icon" href="../image/icon.png" />
+		
+		<style type="text/css">
+			fieldset{
+				background-color: #eeddee;
+				padding: 10px;
+				padding-right: 50px;
+			}
+			
+			div{
+				margin: 10px 0px;			
+			}
+			
+			label{
+				display: block;
+				font-size: 20px;
+			}
+			
+			input{
+				text-align: center;
+			}
+			
+			input[type='text'], input[type='password'], input[type='tel'], select{
+				width: 100%;
+				padding: 5px;
+				border: 3px solid #ababab;
+				background-color: #eeddee;
+				font-size: 20px;
+			}
+			
+			div:nth-child(5) input, div:nth-child(5) select{
+				width: 20%;
+			}
+			
+			div:nth-last-child(1){
+				margin-top: 30px;
+			}
+			
+			button.myButton{
+				display: block;
+				width: 100%;
+				height: 40px;
+				margin: 10px 0px;
+				background-color: #5555ff;
+				color: white;
+			}
+		</style>		
+		
+		<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				// .change() --> 기존의 값이 변경되는 순간 실행
+				$("#emailAddress").change(function(){
+					$("#emailDomain").val($("select[name='emailAddress']").val());
+				});
+				
+				// .submit == onsubmit="function(){---}";
+				$("#join").submit(function() {
+					// $(input요소).val() == getXXX 
+					// $(input요소).val('매개변수') == setXXX 
+					var user_id = $("input[name='user_id']");
+					var user_pw = $("#user_pw");
+					var gender = $("input[name='gender']");
+					var birth = $("#birth");
+					var email = $("#email");
+					var emailDomain = $("#emailDomain");
+					var hpno = $("#hpno");
+					var hobby = $("input[name='hobby']");
+					var job = $("select[name='job'] > option:selected");
+					
+					// 아이디 제어
+					//if(user_id.val().replace(/\s/g, "").length == 0){
+					if(user_id.val().replace(/\s/g, "") == ""){
+						// alert("아이디를 입력해주세요.");
+						// placeholder 속성을 input요소에 추가하고자 할 때 (.attr("placeholder", "") == plasceholder="아이디를 입력해주세요.")
+						user_id.attr("placeholder", "아이디를 입력해주세요.");
+						
+						user_id.val("");
+						user_id.focus();
+						
+						return false;
+					}
+					
+					// 비밀번호 제어
+					if(user_pw.val().replace(/\s/g, "")==""){
+						alert("비밀번호를 입력해주세요.");
+						// user_pw.attr("placeholder", "비밀번호를 입력해주세요.");
+					
+						user_pw.val("");
+						user_pw.focus();
+
+						return false;
+					}
+					
+					// 생일 제어
+					if(birth.val().replace(/\s/g, "")==""){
+						alert("생년월일을 입력해주세요.");
+						birth.attr("placeholder", "생년월일을 입력해주세요.");
+						
+						birth.val("");
+						birth.focus();
+						
+						return false;
+					}
+					
+					//var birthExp = /^[0-9]{4}.[0-9]{2}.[0-9]{2}$/;
+					var birthExp = /\d{4}.\d{2}.\d{2}/;
+					//console.log(birth.val().search(birthExp));
+					//if(birth.val().search(birthExp) < 0){			// .search로 정규식에 해당되면 0을 반환, 해당되는 것이 없으면 -1을 반환
+					if(!birthExp.test(birth.val())){
+						alert("숫자로만 입력해주세요.\n ex) 2000.01.01");
+
+						return false;
+					}
+					
+					// 라디오 제어
+					//$("라디오버튼 CSS셀렉터")
+					//.is(":checked") --> 체크일 경우 true
+					//선택자:eq(n) --> n번째 선택
+					if(!$("input[name='gender']").is(":checked")){
+						alert("성별을 선택해 주세요.");
+						$("input[name='gender']:eq(0)").focus();
+
+						return false;
+					}
+					
+					// 이메일 제어
+					if(email.val().replace(/\s/g, "") == ""){
+						alert("이메일 주소를 입력해주세요.");
+						
+						email.val("");
+						email.focus();
+						
+						return false;
+					}
+					
+					// 핸드폰번호 제어 
+					if(hpno.val().replace(/\s/g, "") == ""){
+						alert("핸드폰 번호를 입력해주세요.");
+						
+						hpno.val("");
+						hpno.focus();
+						
+						return false;
+					}
+					
+					var hpnoExp = /^(01[01689])-\d{3,4}-\d{4}$/;
+					//if (hpno.val().search(hpnoExp) < 0){
+					if (!hpnoExp.test(hpno.val())) {
+						alert("형식을 맞게 입력해주세요.\n ex) 000(0)-000(0)-0000");
+					
+						return false;
+					}
+					
+					// 취미 제어
+					if(!hobby.is(":checked")){
+						alert("취미를 선택해 주세요.");
+						$("input[name='hobby']:eq(0)").focus();
+						
+						return false;
+					}
+			
+					/*
+					selectbox 선택여부 검사
+					- $("select의 셀렉터 > option:selected").index() : 선택된 항목의 index 번호.
+					- $("select의 셀렉터 > option:selected").val() : 선택된 항목의 값.
+					*/
+					if(job.index() < 1){
+						alert("직업을 선택해 주세요.");
+						$("select[name='job']:eq(0)").focus();
+						
+						return false;
+					}
+					
+					// 입력 내용을 화면에 출력
+					var str = "<h2> ID : " + user_id.val() + "</h2>";
+					str +=  "<h2> PW : " + user_pw.val() + "</h2>";
+					str +=  "<h2> 성별 : " + $("input[name='gender']:checked").val() + "</h2>";
+					str +=  "<h2> 생일 : " + birth.val() + "</h2>";
+					str +=  "<h2> 메일 : " + email.val() + "@" + emailDomain.val() + "</h2>";
+					str +=  "<h2> 번호 : " + hpno.val() + "</h2>";
+					
+					str +=  "<h2> 취미 : ";
+					// each() 함수에 hobby의 개체 수 만큼 반복적으로 function()이 실행된다. checkBox는 for문 사용x
+					$("input[name='hobby']:checked").each(function(){
+						// 이벤트가 발생한 자기 자신을 가리키는 키워드
+						str += $(this).val() + " ";
+					});
+					str += "</h2>";
+					
+					str +=  "<h2> 직업 : " + job.val() + "</h2>";
+					
+					$("#formResult").html(str);
+					
+					// submit 전송 취소
+					return false;
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<h1>회원가입</h1>
+		<form action="" method="get" name="join" id="join" >
+			<fieldset>
+				<div>
+					<label>아이디</label>
+					<input name="user_id" id="user_id" type="text">
+				</div>
+				<div>
+					<label>비밀번호</label>
+					<input name="user_pw" id="user_pw" type="password">
+				</div>
+				<div>
+					<label>생년월일</label>
+					<input name="birth" id="birth" type="text">
+				</div>
+				<div>
+					<label>성별</label>
+					<span><input name="gender" type="radio" value="male">남자</span>
+					<span><input name="gender" type="radio" value="female">여자</span>
+				</div>
+				<div>
+					<label>이메일 주소</label>
+					<input name="email" id="email" type="text">
+					<strong>@</strong>
+					<input name="emailDomain" id="emailDomain" type="text">
+					<select name="emailAddress" id="emailAddress">
+						<option value="">직접선택</option>
+						<option value="naver.com">naver</option>
+						<option value="hanmail.com">daum</option>
+						<option value="nate.com">nate</option>
+						<option value="gmail.com">google</option>
+					</select> 
+				</div>
+				<div>
+					<label>번호</label>
+					<input name="hpno" id="hpno" type="tel">
+				</div>
+				<div>
+					<label>취미</label>
+					<span><input name="hobby" type="checkbox" value="work">걷기</span>
+					<span><input name="hobby" type="checkbox" value="soccer">축구</span>
+					<span><input name="hobby" type="checkbox" value="basketball">농구</span>
+					<span><input name="hobby" type="checkbox" value="baseball">야구</span>
+					<span><input name="hobby" type="checkbox" value="travel">여행</span>
+					<span><input name="hobby" type="checkbox" value="movie">영화</span>
+				</div>
+				<div>
+					<label>직업</label>
+					<select name="job">
+						<option value="">----선택해주세요----</option>
+						<option value="job1">직업1</option>
+						<option value="job2">직업2</option>
+						<option value="job3">직업3</option>
+						<option value="job4">직업4</option>
+						<option value="job5">직업5</option>
+					</select> 
+				</div>
+				<div>
+					<button class="myButton" type="submit">회원가입</button>
+					<button class="myButton" type="reset">다시작성</button>
+				</div>
+			</fieldset>
+		</form>
+		<div id="formResult"></div>
+	</body>
+</html>
