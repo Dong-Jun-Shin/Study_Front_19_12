@@ -1,8 +1,8 @@
-html, body {
+ï»¿html, body {
 	width: 100%;
 	height: 100%;
 }
-/* ÆäÀÌÁö Á¦¸ñÀ» Ç¥Çö.*/
+/* í˜ì´ì§€ ì œëª©ì„ í‘œí˜„.*/
 h1.title {
 	font-size: large;
 	border-left: 10px solid #7BAEB5;
@@ -11,19 +11,19 @@ h1.title {
 	width: auto;
 	background-color: #fff;
 }
-/* ¿¹Á¦ ½ÇÇàÀ» À§ÇÑ ¹öÆ°ÀÌ³ª ¸µÅ© ¹èÄ¡ÇÏ´Â ¿µ¿ª Ç¥Çö.*/
+/* ì˜ˆì œ ì‹¤í–‰ì„ ìœ„í•œ ë²„íŠ¼ì´ë‚˜ ë§í¬ ë°°ì¹˜í•˜ëŠ” ì˜ì—­ í‘œí˜„.*/
 div.exec, div.console {
 	padding: 20px 15px;
 	border-bottom: 1px solid #7BAEB5;
 }
-/* °á°ú Ãâ·ÂÀ» À§ÇÑ ¿µ¿ª Ç¥Çö.*/
+/* ê²°ê³¼ ì¶œë ¥ì„ ìœ„í•œ ì˜ì—­ í‘œí˜„.*/
 div.console {
 	font-family: 'Courier New';
 	font-size: 12px;
 	font-style: italic;
 	line-height: 130%;
 }
-/* ¿¹Á¦ È­¸éÀ» ±¸¼ºÇÏ±â À§ÇÑ ¿µ¿ª Ç¥Çö.*/
+/* ì˜ˆì œ í™”ë©´ì„ êµ¬ì„±í•˜ê¸° ìœ„í•œ ì˜ì—­ í‘œí˜„.*/
 div.example {
 	padding: 10px 30px;
 }
