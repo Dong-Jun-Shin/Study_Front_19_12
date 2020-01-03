@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>문서 구조를 활용한 셀렉터와 css 부여 방식</title>
+		<!-- 문서 구조를 활용한 셀렉터를 사용 시, 정확하게 지정해줘야 한다. -->
+		
+		<link rel="shortcut icon" href="../image/icon.png" />
+		<link rel="apple-touch-icon" href="../image/icon.png" />
+		
+		<style type="text/css">
+			div{
+				width: 480px;
+				height: 300px;
+				padding-top: 20px;
+				background-size: 100% 100%;
+			}
+			
+			ul{
+				padding: 10px 20px;
+				background-color: rgba(255, 255, 255, 0.6);
+			}
+			
+			a{
+				text-decoration: none;
+			}
+		</style>
+		
+		<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				// 링크가 클릭된 경우
+				$(".item > a").click(function(){
+					var image = $(this).html();
+					// 클릭된 링크의 조상들 중에서 <div> 태그를 검색하여 CSS 배경이미지 설정
+					/*
+					$(this).parent().parent().parent().css({
+						//"background" : "url('" + image + "')" + " no-repeat"	//반복되는 속성과 크기 지정x
+						"background-image" : "url('" + image + "')"				//반복x, 선택한 영역에 딱 맞게 지정
+					});
+					*/
+					
+					$(this).parents("div").css({
+						"background-image" : "url('" + image + "')"
+					});
+					
+					return false;
+				});
+				
+				/*
+				$("li.item > a").click(function(){
+					$("div").css({"background-image" : "url('"+$(this).html()+"')"});
+					
+					return false;
+				});
+				*/
+			});
+		</script>
+	</head>
+	<body>
+		<div>
+			<ul id="menu">
+				<li class="item">
+					<a href="#">../image/1.jpg</a>
+				</li>
+				<li class="item">
+					<a href="#">../image/2.jpg</a>
+				</li>
+				<li class="item">
+					<a href="#">../image/3.jpg</a>
+				</li>
+			</ul>
+		</div>
+	</body>
+</html>

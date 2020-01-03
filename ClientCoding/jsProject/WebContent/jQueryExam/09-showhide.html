@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>show hide 토글 </title>
+		
+		<link rel="shortcut icon" href="../image/icon.png" />
+		<link rel="apple-touch-icon" href="../image/icon.png" />
+		
+		<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				// show-hide
+				//첫 번째 input 버튼을 누른 경우
+				$("#sh > input:eq(0)").click(function(){
+					$("#sh > div").show(1000);
+				});
+				
+				//두 번째 input 버튼을 누른 경우
+				$("#sh > input:eq(1)").click(function(){
+					$("#sh > div").hide(1000);
+				});
+				
+				//세 번째 input 버튼을 누른 경우
+				$("#sh > input:eq(2)").click(function(){
+					$("#sh > div").toggle(1000);
+				});
+				
+				// fade in-out
+				//첫 번째 input 버튼을 누른 경우
+				$("#fade > input:eq(0)").click(function(){
+					$("#fade > div").fadeIn(1000);
+				});
+				
+				//두 번째 input 버튼을 누른 경우
+				$("#fade > input:eq(1)").click(function(){
+					$("#fade > div").fadeOut(1000);
+				});
+				
+				//세 번째 input 버튼을 누른 경우
+				$("#fade > input:eq(2)").click(function(){
+					$("#fade > div").fadeToggle(2000);
+				});
+				
+				// slide Down-Up
+				//첫 번째 input 버튼을 누른 경우
+				$("#slide > input:eq(0)").click(function(){
+					$("#slide > div").slideDown(1000);
+				});
+				
+				//두 번째 input 버튼을 누른 경우
+				$("#slide > input:eq(1)").click(function(){
+					$("#slide > div").slideUp(1000);
+				});
+				
+				//세 번째 input 버튼을 누른 경우
+				$("#slide > input:eq(2)").click(function(){
+					$("#slide > div").slideToggle(2000);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<h1>show/hide</h1>
+		<div id="sh">
+			<input type="button" value="보이기" />
+			<input type="button" value="숨기기" />
+			<input type="button" value="토글" />
+			<div>
+				<img src="../image/1.jpg" width="300px" height="200px" />
+			</div>
+		</div>
+
+		<h1>fadeIn/fadeOut</h1>
+		<div id="fade">
+			<input type="button" value="보이기" />
+			<input type="button" value="숨기기" />
+			<input type="button" value="페이드 토글" />
+			<div>
+				<img src="../image/2.jpg" width="300px" height="200px" />
+			</div>
+		</div>
+
+		<h1>slideDown/slideUp</h1>
+		<div id="slide">
+			<input type="button" value="보이기" />
+			<input type="button" value="숨기기" />
+			<input type="button" value="슬라이드 토글" />
+			<div>
+				<img src="../image/3.jpg" width="300px" height="200px" />
+			</div>
+		</div>
+	</body>
+</html>

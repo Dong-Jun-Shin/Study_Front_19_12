@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>동적 노드 추가, 삭제</title>
+		
+		<link rel="shortcut icon" href="../image/icon.png" />
+		<link rel="apple-touch-icon" href="../image/icon.png" />
+		
+		<style type="text/css">
+			
+		</style>
+		
+		<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				/* 동적 추가 삭제 2 */
+				$("input.exam2").click(function(){
+					var content1 = $("<h3>").html("치킨 피자 초밥 스시 귤 오렌지 한라봉 레드향");
+					var content2 = $("<p>").html("당도가 높고,껍질이 잘 벗겨지며 부드러운 것이 특징. 비타민이 풍부해 피로회복,신진대사촉진,동맥경화 예방,콜레스테롤 수치 저하,항산화 등의 효능이 있다.");
+					$("div.exam2").append(content1).append(content2);
+				});
+				
+				/* 동적 추가 삭제 1 */
+				//추가된 동적 요소의 수를 카운트하기 위한 전역변수
+				var i = 1;
+				
+				$("input.exam1").click(function(){
+					//새로운 요소의 생성
+					var li1 = $("<li>").css("color", "red").html("추가항목" + (i++));
+					var li2 = $("<li>").css("color", "green").html("추가항목" + (i++));
+					var li3 = $("<li>").css("color", "blue").html("추가항목" + (i++));
+					
+					//새로 생성된 요소에 대한 이벤트 추가
+					li1.click(function(){
+						$(this).remove();
+					});
+					
+					li2.click(function(){
+						$(this).remove();
+					});
+					
+					li3.click(function(){
+						$(this).remove();
+					});
+					
+					/*
+					li1.appendTo($("ul"));
+					$("ul.exam1").append(li2);
+					$("ul:eq(0)").append(li3);
+					*/
+					$("ul.exam1").append(li1).append(li2).append(li3);
+					
+					/*
+					// 추가될 구조만 있다면 어디든 해당 태그 내에 추가 가능
+					$("html").parent().append(li4);
+					var li4 = $("<h2>").css("color", "skyblue").html("왁왁" + (i++));
+					*/
+				});
+				
+				$("input.exam1").click(function(){
+					$("ul").empty();
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<input type="button" value="저장" class="exam2"/>
+		<div class="exam2"></div>		
+		
+		<hr />
+		
+		<input type="button" value="추가" class="exam1"/>
+		<input type="button" value="삭제" class="exam1"/>
+		<!-- 동적으로 요소가 추가될 태그 -->
+		<ul class="exam1"></ul>
+		
+	</body>
+</html>
