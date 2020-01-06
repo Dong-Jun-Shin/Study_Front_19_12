@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books>
+	<book>
+		<title>1일 1페이지, 세상에서 가장 짧은 교양 수업 365</title>
+		<author>데이비드 S. 키더, 노아 D. 오펜하임</author>
+		<price>16000</price>
+	</book>
+	<book>
+		<title>종의 기원</title>
+		<author>정유정</author>
+		<price>10000</price>
+	</book>
+	<book>
+		<title>다르게 보는 힘</title>
+		<author>이종인</author>
+		<price>15000</price>
+	</book>
+</books>

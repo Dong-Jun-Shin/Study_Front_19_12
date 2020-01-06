@@ -1,0 +1,10 @@
+<!-- HTML 태그, 인라인 스타일시트도 인식한다. -->
+<pre>
+	<em style="color:red">ABCDEFGHIJK</em>
+	<strong>태그만들기<strong>
+	1234567890
+	兒備規環
+	
+	<h1 style="color:red">Ajax를 통해서 다른 파일을 읽어옵니다.</h1>
+	<h2 style="color:blue"><img src="../image/icon.png" alt="jQuery" />다른 내용을 출력합니다.</h2>
+</pre>

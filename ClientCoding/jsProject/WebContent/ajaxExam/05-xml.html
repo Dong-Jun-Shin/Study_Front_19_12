@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>xml 파일 읽어오기(3)</title>
+		
+		<link rel="shortcut icon" href="../image/icon.png" />
+		<link rel="apple-touch-icon" href="../image/icon.png" />
+		
+		<link rel="stylesheet" type="text/css" href="../css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="../css/common.css" />
+		
+		<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				/*
+				$.ajax({
+					url: "../ajax/xml/05.xml",
+					type: "get",
+					datatype: "xml",
+					timeout: 30000,
+					cache: false,
+					
+					success: function(data){
+						var ul = $("<ul style='list-style: disc; padding: 30px 30px;'>");
+						$(data).find("book").each(function(){
+							console.log($(this).index());
+							//if($(this).index()==(n-1)){ : n번째 요소일 때만 출력
+							
+							var title = $(this).find("title").text();
+							var author = $(this).find("author").text();
+							var price = $(this).find("price").text();
+							
+							var li = $("<li>");
+							li.html(title + ", " + author + ", " + price);
+							
+							ul.append(li);
+						});
+						$("#result").append(ul);
+					},
+					
+					error: function(xhr, textStatus, errorThrown){
+						$("#result").html(textStatus + "(HTTP-" + xhr.status + " / " + errorThrown + ")");
+					}
+				});
+				*/
+				
+				$.get('../ajax/xml/05.xml', function(data){
+					var ul = $("<ul style='list-style: disc; padding: 30px 30px;'>");
+					$(data).find('book').each(function(){
+						var title = $(this).find("title").text();
+						var author = $(this).find("author").text();
+						var price = $(this).find("price").text();
+						
+						//var txt = "<li>" + title + ", " + author + ", " + price;
+						var txt = $("<li>").html(title + ", " + author + ", " + price);
+						ul.append(txt);
+					});
+					$("#result").append(ul);
+				}).fail(function(xhr, status, errorThrown){
+					$("#result").html("오류가 발생했습니다. <br />")
+					.append("오류명: " + errorThrown + "<br />")
+					.append("상태: " + status);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<h1 class="title">$.ajax() 함수를 사용한 XML데이터 읽기(3)</h1>
+		<div class="console" id="result"></div>
+	</body>
+</html>
