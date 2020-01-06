@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>jQuery Plugin - slidesJS</title>
+		
+		<link rel="shortcut icon" href="../../image/icon.png" />
+		<link rel="apple-touch-icon" href="../../image/icon.png" />
+		
+		<!-- 공통 CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/reset.css" />
+		
+		<!-- plugin CSS -->
+		<link rel="stylesheet" type="text/css" href="../../css/navigation.css" />
+		
+		<script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
+		
+		<!-- slide Plugin -->
+		<!-- slide : https://slidesjs.com/ -->
+		<script type="text/javascript" src="../plugins/slidesJS/jquery.slides.min.js"></script>
+		
+		<!-- 사용자 정의 스크립트 부분 -->
+		<script type="text/javascript">
+			/*
+				- slides-js는 jquery객체 내에 slidesjs() 함수로 적용할 수 있도록 한다.
+				- 사용방법 $("#slides").slidejs({...});
+				$("slides").slidesjs({
+					width: 넓이값(숫자),
+					height: 높이값(숫자),
+					play : {
+						active : play/stop 버튼 표시 여부.
+						auto : 자동 재생 on --> true
+						interval : 슬라이드 재생 간격(1/1000초)
+						swap : true(play/stop 버튼을 상황에 따라 표시) / false(play/stop 버튼 항상 표시)
+						effect : 효과 제어 (slide or fade) 선택
+					}
+				});
+			*/
+		
+			$(function(){
+				$("#slides").slidesjs({
+					width: 800,
+					height: 300,
+					/*
+					play: {
+						active : true,
+						auto : true,
+						interval : 2000,
+						swap : true,
+						effect : "fade"
+					}
+					*/
+					
+					/* (navigation)이전-다음 버튼에 대한 제어 */
+					navigation : {
+						/* 버튼의 표시 여부 설정 */
+						active : true,
+						/* 버튼 클릭시 적용될 효과 */
+						effect : "slide"
+					},
+					/* (pagination)현재 위치에 대한 표시 여부와 클릭했을 경우의 효과 제어 */
+					pagination : {
+						/* 버튼의 표시 여부 설정 */
+						active : true,
+						/* 버튼 클릭시 적용될 효과 */
+						effect : "fade"
+					},
+					/* 버튼 클릭시 적용될 효과에 대한 제어 */
+					effect : {
+						slide : {
+							speed : 2000
+						},
+						fade : {
+							speed : 2000							
+						}
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<h1 class="title">Image Slider(2)</h1>
+		<div class="example">
+			<div id="slides">
+				<img src="../../image/slide-1.jpg" />
+				<img src="../../image/slide-2.jpg" />
+				<img src="../../image/slide-3.jpg" />
+				<img src="../../image/slide-4.jpg" />
+			</div>
+		</div>
+	</body>
+</html>
