@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>json 파일 읽어오기</title>
+		
+		<link rel="shortcut icon" href="../image/icon.png" />
+		<link rel="apple-touch-icon" href="../image/icon.png" />
+		
+		<link rel="stylesheet" type="text/css" href="../css/common.css">
+		<link rel="stylesheet" type="text/css" href="../css/reset.css">
+		
+		<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#mybtn").one("click", function(){
+					/*
+					$.ajax({
+						url: "../ajax/json/book.json",
+						type: "get",
+						dataType: "json",
+						timeout: 30000,
+						cache: false,
+						
+						success: function(json){
+							var book = json.books.book;
+							
+							var ul = $("<ul style='list-style: square;'>");
+
+							ul.css({
+								 "padding" : "10px 20px"
+							});
+							
+							for (var i = 0; i < book.length; i++) {
+								var title = book[i].title;
+								var author = book[i].author;
+								var price = book[i].price;
+								
+								var li = $("<li>").html(title + ", " + author + ", " + price);
+								
+								ul.append(li);
+								$("#result").append(ul);
+							}
+						},
+						
+						error: function(xhr, textStatus, errorThrown){
+							$("#result").html(textStatus + "(HTTP-" + xhr.status + " / " + errorThrown + ")");
+						}
+					});
+					*/
+					
+					/*
+					$.get("../ajax/json/book.json", function(json){
+						var book = json.books.book;
+						
+						var ul = $("<ul style='list-style: square;'>");
+
+						ul.css({
+							 "padding" : "10px 20px"
+						});
+						
+						for (var i = 0; i < book.length; i++) {
+							var title = book[i].title;
+							var author = book[i].author;
+							var price = book[i].price;
+							
+							var li = $("<li>").html(title + ", " + author + ", " + price);
+							
+							ul.append(li);
+							$("#result").append(ul);
+						}
+					}).fail(function(xhr, status, errorThrown){
+						$("#result").html("오류가 발생했습니다.<br />").append("오류명: " + errorThrown + "<br />").append("상태: " + status);
+					});
+					*/
+					
+					$.getJSON("../ajax/json/book.json", function(json){
+						var book = json.books.book;
+						
+						var ul = $("<ul style='list-style: square;'>");
+
+						ul.css({
+							 "padding" : "10px 20px"
+						});
+
+						/*
+						// json 객체는 json에서 불러온 데이터를 의미.
+						
+						for (var i = 0; i < book.length; i++) {
+							var title = book[i].title;
+							var author = book[i].author;
+							var price = book[i].price;
+							
+							var li = $("<li>").html(title + ", " + author + ", " + price);
+							
+							ul.append(li);
+							$("#result").append(ul);
+						}
+						*/
+						
+						// json 데이터 접근은 this 객체로 가능.
+						$(book).each(function(){
+							var title = this.title;
+							var author = this.author;
+							var price = this.price;
+							
+							var li = $("<li>").html(title + ", " + author + ", " + price);
+							
+							ul.append(li);
+							$("#result").append(ul);
+						});
+					}).fail(function(xhr, status, errorThrown){
+						$("#result").html("오류가 발생했습니다.<br />").append("오류명: " + errorThrown + "<br />").append("상태 : " + status);
+					});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<h1 class="title">$.ajax() 함수를 사용한 JSON데이터 읽기</h1>
+		<div class="exec">
+			<input type="button" value="json파일 가져오기" id="mybtn" />
+		</div>
+		<div class="console" id="result"></div>
+	</body>
+</html>

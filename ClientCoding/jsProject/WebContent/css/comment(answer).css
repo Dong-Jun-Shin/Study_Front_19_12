@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+ul {
+	list-style: none;
+	padding: 0px;
+}
+
+/* 페이지 제목을 표현.*/
+h1{
+	font-size: large;
+	border-left: 10px solid #7BAEB5;
+	border-bottom: 1px solid #7BAEB5;
+	padding: 10px;
+	width: auto;
+	background-color: #fff;
+}
+
+#comment_write{
+	padding: 20px 15px;
+	border-bottom: 1px solid #7BAEB5;
+}
+
+#comment_write label{
+	display: inline-block;
+	width: 80px;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+#comment_write input[type='text'], #comment_write textarea{
+	border: 1px solid #ccc;
+	vertical-align: middle;
+	padding: 3px 10px;
+	font-size: 12px;
+	line-height: 150%;
+}
+
+#comment_write textarea{
+	width: 380px;
+	height: 90px;
+	/* 고정 크기 */
+	resize: none;
+}
+
+.comment_item{
+	font-size: 13px;
+	color: #333;
+	padding: 15px;
+	border-bottom: 1px dotted #ccc;
+	line-height: 150%;
+}
+
+.comment-item .writer{
+	color: #555;
+	line-height: 200%;
+}
+
+.comment_item .writer input{
+	vertical-align: middle;
+}
+
+.comment_item .writer .name{
+	color: #222;
+	font-weight: bold;
+	font-size: 14px;
+}
