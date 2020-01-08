@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>article</title>
+		
+		<link rel="shortcut icon" href="../image/icon.png" />
+		<link rel="apple-touch-icon" href="../image/icon.png" />
+		
+		<link rel="stylesheet" type="text/css" href="../css/reset.css">
+		<link rel="stylesheet" type="text/css" href="../css/article.css">
+		
+		<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$.ajax({
+					url: "../ajax/json/bbs.json",
+					type: "get",
+					dataType: "json",
+					timeout: 30000,
+					cache: false,
+					
+					success: function(json){
+						// 제목, 주석, 총 개수
+						$("#title").html(json.title);
+						$("#description").html(json.description);
+						$("#total span").append(json.total);
+						
+						// json 내용 가져오기와 테이블 생성
+						var item = json.item;
+						var table = $("#lesson_board");
+						
+						// 테이블 헤드(th)
+						var tr_head = $("<tr>");
+						var header = ["번호", "제목", "조회수", "날짜"];
+						
+						for (var i = 0; i < header.length; i++) {
+							tr_head.append($("<th>").html(header[i]));
+						}
+						table.append(tr_head);
+						
+						// 테이블 내용(td)
+						$(item).each(function(){
+							var tr = $("<tr>"); 
+							var td1 = $("<td>").attr("data-num", this.no).html(this.no);
+							var td2 = $("<td>").html(this.subject);
+							var td3 = $("<td>").html(this.hit);
+							var td4 = $("<td>").html(this.date);
+							
+							tr.append(td1).append(td2).append(td3).append(td4);
+							table.append(tr);
+						});
+					},
+					
+					error: function(xhr, textStatus, errorThrown){
+						alert(textStatus + "(HTTP-" + xhr.status + " / " + errorThrown + ")");
+					}
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<h1 id="title"></h1>
+		<div class= "exec" id="description"></div>
+		<div class= "exec" id="total">총 게시물 수: <span></span>개</div>
+		<div class= "example" id="container">
+			<table id="lesson_board"></table>
+		</div>
+	</body>
+</html>

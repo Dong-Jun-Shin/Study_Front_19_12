@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+/* 페이지 제목을 표현.*/
+h1{
+	font-size: large;
+	border-left: 10px solid #7BAEB5;
+	border-bottom: 1px solid #7BAEB5;
+	padding: 15px;
+	width: auto;
+	background-color: #fff;
+}
+
+/* 주석과 총 게시물을 표현 */
+.exec{
+	padding: 20px 15px;
+	border-bottom: 1px solid #7BAEB5;
+	line-height: 150%;
+}
+
+/* 테이블 표현 */
+table{
+	display: block;
+	width: 100%;
+	font-size: 14px;
+	text-align: center;
+}
+
+/* tr 이후의 원소가 나오면 ''이고 float을 가질 수 없다*/
+table tr:after{
+	display: block;
+	content: '';
+	
+	/* float을 해제할 때 사용하는 요소*/
+	float: none;
+	clear: both;
+}
+
+table .left{
+	text-align: left;
+}
+
+thead, tbody, tr{
+	display: block;
+	width: 100%;
+}
+
+th, td{
+	display: block;
+	float: left;
+	padding: 10px 0px;
+}
+
+table thead{
+	border-bottom: 2px solid #285E8E;
+	font-weight: bold;
+}
+
+table tbody tr{
+	border-bottom: 1px dotted #ccc;
+}
+
+.example table .no{
+	width: 10%;
+}
+
+.example table .subject{
+	width: 60%;
+}
+
+.example table .hit{
+	width: 10%;
+}
+
+.example table .date{
+	width: 20%;
+}
+
+#item-template{
+	display: none;	
+}

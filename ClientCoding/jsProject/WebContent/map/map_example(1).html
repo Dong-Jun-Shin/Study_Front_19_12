@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<title>Contact us</title>
+		
+		<link rel="shortcut icon" href="../image/icon.png" />
+		<link rel="apple-touch-icon" href="../image/icon.png" />
+		
+		<style type="text/css">
+			#firstHeading{
+				margin-bottom: 14px;
+				font-family: sans-serif;
+			}
+			
+			#bodyContent p{
+				line-height: 1.8em;
+			}
+		</style>
+		
+		<!-- ./나 생략은 현재에서 시작, ../는 상위폴더에서 시작 -->
+		<link rel="stylesheet" type="text/css" href="./css/map.css" />
+		
+		<script type="text/javascript" src="../js/jquery-3.3.1.min.js"></script>		
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZAZ2BTMifZewwe09LV66SHU9IScj3-lQ&callback=initMap"async defer></script>
+		<script type="text/javascript">
+			function initMap(){
+				// 객체의 표시 위치를 변수로 정의한다.
+				var location = {lat: 37.6571615, lng: 127.2502454};
+			
+				// 맵 객체를 생성하고 id='map'에 지도 표시
+				// 인스턴스 생성. 첫번째 매개변수에는 지도가 표시된 문서 객체명을 명시
+				var map = new google.maps.Map(document.getElementById('map'), {
+					// 두번째 매개변수에 해당하는 항목으로 객체가 구성된다.
+					// 지도 중앙에 표시될 위치를 위도, 경도 값으로 지정.
+					// 우측의 값에서 lat는 위도, lng는 경도이다
+					center: location,
+					// 마우스 휠기능을 설정하거나 해제(true or false)
+					scrollwheel: false,
+					// 지도의 확대/축소 스케일을 지정. zoom값이 0이면 완전히  축소된 지도이고 
+					// 값이 커질수록 더 높은 해상도로 화면이 확대된다.
+					zoom: 17
+				});	
+				
+				var contentString = "마우스가 올라갔다<br /> b to the r";
+				var infowindow = new google.maps.InfoWindow({
+					content: contentString
+				});
+				
+				// 마커 객체 생성
+				var marker = new google.maps.Marker({
+					// 마커가 표시될 맵 객체명 지정
+					map: map,
+					// 마커의 위치를 지정. 현재의 위도, 경도를 기본으로 지정
+					position: location,
+					// 마커에 표시되는 말풍선 제목을 입력
+					title: '여기가 내 위치입니다!\n미래능력개발교육원',
+					icon: "../image/marker.png"
+				});
+				
+				marker.addListener('mouseover', function(){
+					infowindow.open(map, marker);
+				});
+				
+				marker.addListener('mouseout', function(){
+					infowindow.close();
+				});
+				
+				// 정보창 객체를 추가
+				// 정보창 객체를 map 객체에 추가
+				var infoWindow = new google.maps.InfoWindow({map: map});
+				
+				//정보창의 위치(infoWindow.setPosition)
+				infoWindow.setPosition(location);
+				// 정보창에 출력된 내용을 추가
+				infoWindow.setContent('미래능력개발교육원;')
+			} // initMap() 함수종료
+		</script>
+	</head>
+	<body>
+		<header>
+			<h1>My Site</h1>
+			<nav>
+				<span><a href="#">Home</a></span>
+				<span><a href="#">About</a></span>
+				<span><a href="#">Contact Us</a></span>
+			</nav>
+		</header>
+		<div id="main">
+			<figure class="banner">
+				<div class="figure_header">
+					<h2>고민은 구매를 늦출 뿐이다.</h2>
+					<p>The concern is to slow the purchase.</p>
+				</div>
+			</figure>
+			<section>
+				<article>
+					<p>고민해도 어차피 사게 될지어다.</p>
+					<div id="map"><br />&nbsp;지도가 표시될 영역</div>
+				</article>
+				<aside>
+					<form action="" method="get">
+						<fieldset>
+							<legend>Send us Email</legend>
+							<div class="form-group">
+								<label for="receiveName">receiveName</label>
+								<input type="text" id="receiveName" name="receiveName">
+							</div>
+							<div class="form-group">
+								<label for="receiveEmail">receiveEmail</label>
+								<input type="email" id="receiveEmail" name="receiveEmail">
+							</div>
+							<div class="form-group">
+								<label for="sendName">sendName</label>
+								<input type="text" id="sendName" name="sendName">
+							</div>
+							<div class="form-group">
+								<label for="sendEmail">sendEmail</label>
+								<input type="email" id="sendEmail" name="sendEmail">
+							</div>
+							<div class="form-group">
+								<label for="subject">subject</label>
+								<input type="email" id="subject" name="subject">
+							</div>
+							<div class="form-group">
+								<label for="msg">Message</label>
+								<textarea id="msg" name="msg" cols="30" rows="3"></textarea>
+							</div>
+							<div class="form-group">
+								<button type="button">SEND</button>
+							</div>
+						</fieldset>
+					</form>
+				</aside>
+			</section>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+/* 페이지 제목을 표현.*/
+h1{
+	font-size: large;
+	border-left: 10px solid #7BAEB5;
+	border-bottom: 1px solid #7BAEB5;
+	padding: 15px;
+	width: auto;
+	background-color: #fff;
+}
+
+div.exec{
+	margin: 0px;
+	padding: 20px 15px;
+	border-bottom: 1px solid #7BAEB5;
+	line-height: 150%;
+}
+
+table{
+	width: 95%;
+	height: auto;
+	margin: 20px auto;
+	text-align: center;
+}
+
+th, td{
+	padding: 10px 0px;
+}
+
+th{
+	font-weight: bold;
+	border-bottom: 5px solid #0505FF;
+}
+
+td{
+	border-bottom: 1px solid lightgray;
+}
+
+tr > td:nth-child(2){
+	text-align: left;
+}
